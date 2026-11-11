@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a1027"><title>Milionár: Nenechaj sa nachytať</title>
+<style>
+:root{color-scheme:dark;--bg:#090e23;--panel:#141c37;--line:#3b4e7b;--white:#f6f7ff;--muted:#bbc6e4;--gold:#ffda82;--blue:#9dceff;--green:#a9edbc;--red:#ffb9b4;font:16px/1.48 system-ui,-apple-system,"Segoe UI",sans-serif}*{box-sizing:border-box}body{margin:0;min-height:100dvh;color:var(--white);background:radial-gradient(ellipse at 50% -14%,#303775 0,transparent 61%),radial-gradient(ellipse at 0% 93%,#18244c,transparent 48%),var(--bg)}h1,h2,h3,p{margin:0}button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}button:disabled{cursor:not-allowed;opacity:.54}button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}a:focus-visible{outline:3px solid var(--gold)}.wrap{width:min(1160px,100% - 36px);margin:auto}.mast{display:flex;align-items:center;justify-content:space-between;gap:9px;min-height:68px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;font-size:.78rem;font-weight:900;letter-spacing:.11em}.brand svg{width:32px;flex:none}.mast-actions{display:flex;align-items:center;gap:7px}main{padding:24px 0 32px}footer{border-top:1px solid var(--line);padding:14px 0 23px;color:var(--muted);font-size:.76rem}.eyebrow,.badge,.stage-code{font:800 .74rem/1.3 ui-monospace,Consolas,monospace;letter-spacing:.095em;text-transform:uppercase;color:var(--gold)}.muted{color:var(--muted)}.btn{min-height:44px;border:1px solid var(--line);background:#242f54;border-radius:9px;padding:8px 13px;font-weight:800}.btn:not(:disabled):hover{filter:brightness(1.18)}.primary{background:linear-gradient(140deg,#ffe39d,#ffc861);border-color:#ffdd8c;color:#251c20}.quiet{background:#151e38}.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:15px}.fade{animation:appear .32s ease-out both}@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.hero{position:relative;display:grid;grid-template-columns:1fr .86fr;align-items:center;overflow:hidden;gap:10px;padding:clamp(22px,5vw,58px);border:1px solid #6774a4;border-radius:25px;background:radial-gradient(ellipse at 89% 31%,#343b74,#151e3b 66%)}.hero h1,.big{font-size:clamp(2.5rem,7.5vw,6.65rem);letter-spacing:-.075em;line-height:.95;margin:12px 0 16px}.hero h1 em{font-style:normal;color:var(--gold);display:block;font-size:.59em;letter-spacing:-.055em;margin-top:9px}.hero p{color:#dfe6f8;max-width:49ch}.hero-art{max-width:460px;margin:auto;width:100%}.hero-art svg{width:100%;height:auto;display:block}.glow{animation:glow 3s ease-in-out infinite}@keyframes glow{50%{opacity:.55}}.ticker{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.chip{border:1px solid #637199;background:#232d4c;color:#ebedfb;padding:5px 9px;border-radius:100px;font-size:.76rem;font-weight:800}.rules{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 17px;margin-top:14px}.rules summary{cursor:pointer;font-weight:850}.rules p{margin:8px 0;font-size:.9rem}.rules ul,.rules ol{padding-left:1.4em;margin:8px 0}.rules li{margin:5px 0}.game{display:grid;grid-template-columns:minmax(0,1fr) 232px;gap:14px;align-items:start}.game-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}.board{min-width:0}.topdata{display:flex;gap:7px;flex-wrap:wrap;align-items:center}.prog{height:5px;margin:6px 0 13px;background:#293555;border-radius:5px;overflow:hidden}.prog i{display:block;height:100%;background:linear-gradient(90deg,#8bc9ff,#ffd37b);border-radius:5px;transition:width .2s}.news{position:relative;display:grid;grid-template-columns:minmax(0,1fr);gap:10px;background:linear-gradient(145deg,#1d284a,#172140);border:1px solid #51658f;border-radius:15px;padding:16px}.news.with-art{grid-template-columns:minmax(0,1fr) minmax(140px,33%);align-items:center}.news h2{font-size:clamp(1.18rem,3.5vw,1.85rem);letter-spacing:-.037em;line-height:1.13;margin:6px 0 9px}.news p{color:#e3e8fb;font-size:.9rem}.news .mini{border:1px solid #59698b;border-radius:9px;overflow:hidden}.news .mini svg{display:block;width:100%;height:auto}.news .mini span{display:block;padding:5px 7px;color:var(--muted);background:#121a30;font-size:.68rem}.article{border-left:3px solid var(--blue);padding:10px 12px;margin-top:9px;background:#152440;border-radius:0 8px 8px 0}.article p{margin-top:4px;color:#e2ebfa;font-size:.88rem}.ask{font-size:clamp(1.12rem,2.5vw,1.48rem);line-height:1.25;margin:13px 0 9px}.answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.answer{min-height:64px;display:flex;gap:8px;align-items:center;text-align:left;padding:8px 10px;background:linear-gradient(135deg,#222f56,#17213e);border:1px solid #526895;border-radius:10px;font-size:.88rem;font-weight:750;line-height:1.33}.answer:not(:disabled):hover{border-color:var(--blue)}.answer span{width:24px;height:24px;display:grid;place-items:center;flex:none;background:#354c77;border-radius:50%;font-size:.74rem;color:#e3efff}.answer[aria-pressed=true]{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold);background:#484058}.answer.correct{border-color:var(--green);background:#244137;opacity:1}.answer.wrong{border-color:var(--red);background:#522e42;opacity:1}.answer.removed{border-style:dashed;opacity:.45}.answer.checked:not(.correct):not(.wrong):not(.removed){opacity:.78}.lifes{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 0}.life{font-size:.8rem;border-color:#657aa8;background:#223355}.life.used{opacity:.48}.hint{font-size:.77rem;margin-top:7px;color:var(--muted)}.feedback{margin-top:11px;background:#202c46;border:1px solid #7086a5;border-radius:12px;padding:13px}.feedback h3{font-size:1.05rem;margin-bottom:4px;color:var(--gold)}.feedback p{font-size:.9rem;margin:6px 0}.feedback details{margin:7px 0;color:#d7e4fb;font-size:.84rem}.feedback summary{cursor:pointer}.ladder{background:#141d38;border:1px solid #596c9c;border-radius:13px;overflow:hidden}.ladder summary{padding:12px;cursor:pointer;font-weight:850;color:var(--gold);font-size:.86rem}.ladder ol{margin:0;padding:0 8px 8px;list-style:none}.ladder li{display:grid;grid-template-columns:1.6em 1fr 1.1em;gap:6px;padding:5px 7px;align-items:center;border:1px solid transparent;border-radius:7px;font-size:.78rem;color:#cbd5ef;font-variant-numeric:tabular-nums}.ladder li span:nth-child(2){text-align:right;font-weight:800}.ladder li.current{background:#4d3e4a;border-color:var(--gold);color:#fff1c5}.ladder li.past{background:#1a2743;color:#cddaf0}.ladder li.hit span:last-child{color:var(--green)}.ladder li.miss span:last-child{color:var(--red)}.ladder li:nth-child(4n){margin-top:4px;border-top-color:#4b577b}.ladder li.current:nth-child(4n){border-top-color:var(--gold)}.result,.handoff{max-width:860px;margin:auto;background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:clamp(16px,4vw,36px)}.result .big,.handoff .big{font-size:clamp(2.2rem,6vw,4.3rem)}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,135px),1fr));gap:8px;margin:14px 0}.stat{background:#202e50;border:1px solid #556998;border-radius:10px;padding:10px}.stat b{color:var(--gold);display:block;font-size:1.32rem}.stat span{color:var(--muted);font-size:.8rem}.review{margin:6px 0;border:1px solid var(--line);border-radius:8px;background:#192440;padding:8px 10px}.review summary{cursor:pointer;font-weight:750;font-size:.9rem}.review p{font-size:.84rem;margin:7px 0}.dialog{width:min(580px,100% - 22px);max-height:90dvh;background:var(--panel);color:var(--white);border:1px solid #6c7fab;border-radius:14px;padding:16px}.dialog::backdrop{background:#080b17cd}.dialog .rules{border:0;padding:0;margin:0}
+@media(max-width:820px){.game{grid-template-columns:minmax(0,1fr) 175px}.hero h1{font-size:clamp(2.6rem,9vw,5.7rem)}}
+@media(max-width:650px){.wrap{width:calc(100% - 22px)}main{padding-top:13px}.mast{min-height:57px}.mast .btn{font-size:.72rem;padding:6px 8px}.brand{font-size:.69rem;gap:6px}.brand svg{width:25px}.hero,.game{grid-template-columns:1fr}.hero{padding:20px}.hero-art{max-width:225px}.news.with-art{grid-template-columns:minmax(0,1fr) minmax(96px,30%)}.news{padding:12px}.answers{grid-template-columns:1fr}.answer{min-height:52px}.game-top .chip{font-size:.68rem}.game-top .btn{font-size:.74rem}.game-top{gap:5px}.lifes{gap:5px}.life{font-size:.75rem;padding-inline:9px}}
+@media(max-width:350px){.news.with-art{grid-template-columns:1fr}.news .mini{max-width:180px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* Studio lights and gold-trimmed question set */
+:root{--bg:#0b0c22;--panel:#181a38;--line:#46446f;--gold:#ffda8d}
+body{background:radial-gradient(ellipse at 76% 0%,#33205d 0%,transparent 57%),radial-gradient(ellipse at 15% 84%,#182d51,transparent 47%),var(--bg)}
+.brand{color:#ffdd96}
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(14px,3vw,38px);padding:clamp(20px,4vw,44px);background:linear-gradient(138deg,#12152d,#24204b 68%,#302253);border-color:#766ca2;box-shadow:0 16px 50px #07081774,inset 0 1px #d0b9ff22}
+.hero h1{font-size:clamp(2.55rem,7vw,6.25rem);font-weight:950;text-shadow:0 4px #08091b50}
+.hero h1 em{color:#ffdb96;text-shadow:0 3px #0b0b20}
+.hero-art{max-width:530px}
+.hero .primary,.feedback .primary,.handoff .primary{box-shadow:0 5px 0 #8a542d,0 12px 22px #100b26a0;border-color:#ffe1a6;margin-bottom:4px}
+.hero .chip{border-color:#64598c;background:#21213e}
+.game-top .badge{color:#e5d5ff}.game-top .chip:first-of-type{border-color:#8f704a}
+.prog{background:#39335f}.prog i{background:linear-gradient(90deg,#8e89ff,#a2c8ff 54%,#ffce7d)}
+.news{background:linear-gradient(137deg,#25234c,#171d3d 78%);border-color:#73639d;box-shadow:inset 0 1px #d6bdff17,0 8px 22px #070a1b55}
+.news .eyebrow{display:inline-block;background:#32274e;border:1px solid #6b5685;border-radius:5px;padding:4px 7px}
+.answer{position:relative;border-color:#655ea0;background:linear-gradient(120deg,#282a53,#1a2142);box-shadow:0 2px 0 #0d122a;min-height:66px}
+.answer span{border:1px solid #8274bc;background:#423a68}
+.answer[aria-pressed=true] span{background:#ffd688;color:#2b2337;border-color:#ffd688}
+.answer.correct span{background:#a9edbc;color:#22382d;border-color:#a9edbc}
+.answer.wrong span{background:#ffb9b4;color:#431e30;border-color:#ffb9b4}
+.ladder{background:linear-gradient(160deg,#252348,#141832 78%);border-color:#756a9a;box-shadow:0 6px 24px #090a2155}
+.ladder summary{background:#333051;border-bottom:1px solid #63577f}
+.ladder li.current{background:linear-gradient(105deg,#594052,#6c4d50);box-shadow:0 0 12px #ffba5534}
+.feedback{background:linear-gradient(120deg,#23354b,#252445);border-color:#7d92b6}
+@media(max-width:650px){.hero{grid-template-columns:1fr}.hero-art{max-width:260px}.answer{min-height:54px}}
+</style></head><body>
+<header class="mast wrap"><div class="brand"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#ffd27b"/><path d="M9 28V12h4l7 9 7-9h4v16h-4v-9l-7 8-7-8v9Z" fill="#211b34"/></svg> MILIONÁR / 02</div><div class="mast-actions"><button id="sound" class="btn quiet" aria-pressed="true">Zvuk: zapnutý</button><button id="rules" class="btn quiet">Pravidlá</button></div></header>
+<main id="app" class="wrap"><section class="hero" style="display:block;max-width:790px;margin:auto"><p class="eyebrow">Digitálna odolnosť · televízny kvíz</p><h1>Milionár<em>Nenechaj sa nachytať</em></h1><p><strong>Ak sa nezobrazia tlačidlá hry, stiahnite súbor a otvorte ho priamo v prehliadači.</strong></p><ol><li>Uložte súbor s koncovkou <strong>.html</strong> na plochu.</li><li>Kliknite naň pravým tlačidlom a vyberte <strong>Otvoriť v programe → Microsoft Edge</strong> (alebo Google Chrome).</li></ol><p>Náhľady súborov niekedy nespúšťajú interaktívne hry. Na hranie internet netreba.</p></section></main><footer class="wrap">Digitálna odolnosť · Fiktívne správy, ilustračné obrázky a virtuálne výhry.</footer>
+<dialog id="help" class="dialog" aria-labelledby="help-title"></dialog>
+<script>
+(function () {
+"use strict";
+const levels=[100,200,300,500,1000,2000,4000,8000,16000,64000,250000,1000000];
+const Q=(topic,head,excerpt,prompt,options,correct,article,why,art='')=>({topic,head,excerpt,prompt,options,correct,article,why,art});
+const questions=[
+Q('Sľub nadpisu','TOTO v školskej taške prekvapilo celú triedu!','V školskej taške našli zabudnutú krabičku so stavebnicou.','Čím sa nadpis snaží vylákať kliknutie?',['Vopred uvádza, čo bolo v taške.','Slovom „TOTO“ zatajil najdôležitejšiu informáciu.','Porovnáva dva názory na stavebnicu.','Upozorňuje na overené nebezpečenstvo.'],1,'Po vyučovaní našli žiaci v taške krabičku so stavebnicou z minulej hodiny. Učiteľ ju odložil na ďalšie vyučovanie.','Slovo „TOTO“ zadrží odpoveď. Výraz „prekvapilo celú triedu“ pridáva drámu, ktorú obsah nedokladá.'),
+Q('Zveličenie','Katastrofa v jedálni! Obed sa mení na poslednú chvíľu','Kuchyňa dnes podáva ryžu namiesto zemiakov. Ostatné jedlo zostáva rovnaké.','Ktoré slovo robí z bežnej zmeny drámu?',['„Katastrofa“','„Obed“','„Jedálni“','„Mení“'],0,'Dodávka zemiakov meškala, preto kuchyňa na jeden deň zmenila prílohu. Obed sa vydáva v bežnom čase.','„Katastrofa“ navodzuje predstavu vážneho problému. Zmena jednej prílohy taký záver nepodporuje.'),
+Q('Nátlak na kliknutie','Klikni HNEĎ, inak prídeš o miesto!','Prihlášky na tvorivú dielňu sa uzatvárajú v piatok. Je pondelok a voľných miest je zatiaľ dosť.','Ktorá odpoveď najlepšie opisuje, ako titulok ovplyvňuje čitateľa?',['Vysvetľuje, prečo je dielňa užitočná.','Jasne uvádza skutočný termín.','Zamlčuje názov organizátora, aby ho nikto nenašiel.','Vyvoláva pocit, že treba konať okamžite, aj keď na to nie je dôvod.'],3,'Prihlášky zbiera školský klub do piatka do 14.00. K pondelku ráno je obsadených šesť z dvadsiatich miest.','„HNEĎ“ a „inak prídeš“ vytvárajú časový tlak. Článok ukazuje, že termín ešte neuplynul a miesta zostávajú.'),
+Q('Presný titulok','Žiaci prišli o obľúbené miesto. Dôvod vás prekvapí!','Knižnica bude v stredu zatvorená pre inventúru. Vo štvrtok otvorí ako zvyčajne.','Ktorý titulok najpresnejšie vystihuje správu?',['Škola prišla o knižnicu.','Knižnica obmedzí prevádzku na neurčito.','Knižnica bude v stredu zatvorená pre inventúru.','Do knižnice sa už dostanú len niektorí žiaci.'],2,'Knihovníčka bude v stredu kontrolovať stav kníh. Výpožičky budú vo štvrtok pokračovať podľa bežného rozvrhu.','Presný nadpis uvádza miesto, trvanie aj dôvod. „Prišli o“ navodzuje dojem trvalej straty.','books'),
+Q('Rozsah tvrdenia','Celá škola chce dlhšie prestávky!','Za zmenu hlasovalo 14 z 20 žiakov jednej triedy. Iných tried sa nikto nepýtal.','Čo je hlavný problém titulku?',['Výsledok jednej triedy vydáva za názor celej školy.','Počet hlasov je automaticky nepravdivý.','Všetky titulky s výkričníkom sú klamstvá.','Dvadsať žiakov je dosť na to, aby poznali názor celej školy.'],0,'Anketa prebehla iba v triede 8.B. Štrnásti boli za, štyria proti a dvaja sa zdržali. Výsledky z iných tried nie sú k dispozícii.','Číslo môže byť pravdivé a záver stále zavádzajúci. „Celá škola“ je širšia skupina než oslovená trieda.'),
+Q('Zamlčaná podmienka','Vstup na koncert zdarma pre každého!','Vstupné sa neplatí, ale pri vstupe treba ukázať potvrdenú rezerváciu.','Ktorá chýbajúca informácia by najviac zmenila rozhodnutie návštevníka?',['Koncert je večer.','Vstup zdarma platí len s potvrdenou rezerváciou.','Plagát má výrazný nápis.','Organizátor zverejnil aj fotku pódia.'],1,'Koncert sa začína o 18.00. Kapacita sály je obmedzená. Rezervácia je bezplatná a pri vstupe sa kontroluje. Bez potvrdenia sa do sály nedá vstúpiť.','„Pre každého“ bez spomenutia rezervácie naznačuje, že stačí prísť. Bezplatnosť a voľný vstup nie je to isté.','stage'),
+Q('Návrh verzus rozhodnutie','Škola zakázala telefóny cez prestávky','Žiacka rada predložila návrh. Vedenie školy o ňom ešte nerozhodlo.','Ktorá dvojica najlepšie pomenúva rozdiel medzi nadpisom a správou?',['Učiteľský názor verzus žiacky názor.','Dočasný zákaz verzus trvalý zákaz.','Zákaz už platí verzus zákaz sa len navrhuje.','Zákaz pre všetkých verzus zákaz pre jednu triedu.'],2,'Žiacka rada navrhla skúšobné pravidlo na jednu prestávku denne. Vedenie chce najprv získať názory tried. Súčasné pravidlá zatiaľ zostávajú rovnaké.','Sloveso „zakázala“ opisuje hotové rozhodnutie. Článok hovorí o návrhu, ktorý ešte len čaká na posúdenie.'),
+Q('Podozrivá istota','Nová štúdia dokázala: táto farba zlepšuje pamäť každému!','Šesť dobrovoľníkov si v triednom pokuse zapamätalo viac slov z farebnej kartičky. Podmienky neboli rovnaké.','Aké znenie by bolo vzhľadom na podklad najprimeranejšie?',['Farba určite neovplyvňuje pamäť.','Vedci dokázali, že si každý zapamätá dvojnásobok.','Farebné kartičky treba povinne používať.','V malom triednom pokuse vyšla farebná kartička lepšie, výsledok však nemožno zovšeobecniť.'],3,'Šesť žiakov skúšalo dva zoznamy slov. Farebná kartička mala iné slová a pri nej mali žiaci viac času. Pokus preto nedokáže oddeliť vplyv farby od ostatných rozdielov.','„Dokázala“ a „každému“ sľubujú istotu. Malá skupina a nerovnaké podmienky taký záver neumožňujú.'),
+Q('Výrez fotografie','Prázdne tribúny: na zápas nikto neprišiel','Ukážka ukazuje výrez ľavej časti tribúny. Podľa článku diváci sedeli napravo.','Čo obrázok spolu s titulkom vynechali?',['Číslo zápasu, pretože bez neho sa nedá vidieť, či sú sedadlá plné.','Obsadenú pravú časť tribúny, ktorú výrez nezachytáva.','Dôkaz, že záber vyrobila umelá inteligencia.','Výsledok zápasu, ktorý potvrdzuje počet divákov.'],1,'Organizátor otvoril len pravý sektor. Na celej fotografii je vidieť divákov vpravo a prázdne sedadlá vľavo. Publikovaný výrez ukazuje iba ľavý sektor.','Samotný výrez môže byť pravý. Zavádza však, ak jeho popis tvrdí niečo o celej tribúne.','seats'),
+Q('Starý obrázok v novom kontexte','Takto dnes vyzerá ihrisko po búrke!','Príspevok ukazuje vodu na ihrisku. Obrázok je z minuloročného albumu. Článok neobsahuje dnešný záber ani obhliadku.','Čo sa dá z dostupných podkladov rozumne usúdiť?',['Ihrisko je dnes určite pod vodou.','Ihrisko je dnes určite suché.','Fotka neukazuje dnešný stav; ten zatiaľ nevieme potvrdiť.','Minuloročný záber dokazuje, že článok vyrobila umelá inteligencia.'],2,'Tá istá snímka je v archíve športového klubu pri minuloročnej búrke. Článok nepriniesol správu správcu ihriska ani súčasnú fotografiu.','Slovo „dnes“ prisudzuje starej fotke nový čas. Z neplatného dôkazu však ešte nevyplýva opak tvrdenia.','rain'),
+Q('Príčina verzus súvislosť','Športové náramky zlepšujú známky. Kúp si jeden!','V jednej triede mali žiaci s náramkom v priemere lepšie známky. Text nesledoval, či sa známky zmenili po kúpe.','Ktorý krok najlepšie odhalí skok v uvažovaní?',['Spýtať sa, či je doložené, že zmenu známok spôsobil náramok.','Zistiť, akú farbu majú predávané náramky.','Kúpiť náramok skôr, než zmizne reklama.','Považovať každý uvedený priemer za podvod.'],0,'Ide o reklamu. Uvádza porovnanie žiakov v jednej triede v jednom čase. Žiaci sa mohli líšiť aj v príprave alebo v spôsobe trávenia voľného času. Neuskutočnilo sa meranie pred kúpou a po nej.','Rozdiel medzi skupinami ešte nedokazuje príčinu. „Zlepšujú“ premieňa pozorovanú súvislosť na nepodložený účinok.'),
+Q('Finále: nadpis + fotka + článok','Vedenie vyhodilo žiakov z telocvične. Koniec tréningov!','Obrázok ukazuje zatvorené dvere. Článok: telocvičňa je počas opravy do piatka zatvorená; tréningy sa presúvajú do malej haly.','Ktorý rozbor najlepšie spája všetky tri podklady?',['Zatvorené dvere dokazujú, že tréningy definitívne skončili.','Nadpis je presný, lebo telocvičňa je naozaj zatvorená.','Fotka musí byť falošná, lebo tréningy pokračujú inde.','Fotka ukazuje zatvorené dvere, no nedokazuje vylúčenie. Nadpis zamlčal dočasnosť a presun tréningov.'],3,'Oprava podlahy trvá do piatka. Počas opravy majú žiaci v rovnakom čase tréning v malej hale. Po dokončení prác sa vrátia do telocvične. Na fotke sú zatvorené dvere pôvodnej telocvične.','„Vyhodilo“ prisudzuje vedeniu úmysel a „koniec“ tvrdí viac, než článok dokladá. Záber a článok sa môžu zhodovať, aj keď nadpis zavádza.','door')
+];
+const heroArt=`<svg viewBox="0 0 580 485" role="img" aria-label="Televízne štúdio: osvetlené pódium, zlatý znak Milionára a displej s hlavnou výhrou">
+ <defs>
+  <radialGradient id="studio-sky" cx="50%" cy="45%" r="62%"><stop stop-color="#443187"/><stop offset=".55" stop-color="#20194d"/><stop offset="1" stop-color="#0b1028"/></radialGradient>
+  <linearGradient id="studio-beam" x2="0" y2="1"><stop stop-color="#c1d5ff" stop-opacity=".68"/><stop offset="1" stop-color="#9c99ff" stop-opacity="0"/></linearGradient>
+  <linearGradient id="studio-metal" x2=".3" y2="1"><stop stop-color="#fff4bd"/><stop offset=".46" stop-color="#ffd481"/><stop offset="1" stop-color="#a65a27"/></linearGradient>
+  <linearGradient id="studio-deck" x2="0" y2="1"><stop stop-color="#5c4eae"/><stop offset="1" stop-color="#1a193c"/></linearGradient>
+  <pattern id="studio-dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".9" fill="#8d99d7" opacity=".33"/></pattern>
+ </defs>
+ <rect x="3" y="3" width="574" height="479" rx="23" fill="url(#studio-sky)" stroke="#696397" stroke-width="1.5"/>
+ <path d="M24 315V64l62-20v241m470 30V64l-62-20v241" fill="none" stroke="#423c75" stroke-width="18"/>
+ <path d="M24 315V64l62-20v241m470 30V64l-62-20v241" fill="none" stroke="#9c85f2" stroke-width="2" opacity=".8"/>
+ <path d="M95 56h390v264H95z" fill="url(#studio-dots)"/>
+ <g fill="none"><circle cx="290" cy="201" r="149" stroke="#8173db" opacity=".65"/><circle cx="290" cy="201" r="134" stroke="#7c89ed" opacity=".52" stroke-dasharray="4 9"/><circle cx="290" cy="201" r="117" stroke="#bbc7ff" opacity=".26"/></g>
+ <g class="glow"><path d="M76 35l104 333 111-30L116 35zM504 35 400 368l-111-30L464 35z" fill="url(#studio-beam)"/><path d="M121 49l92 233 62-14L151 51zm338 0-92 233-62-14L429 51z" fill="#8d81ee" opacity=".13"/><path d="M79 30h28v8H79zm394 0h28v8h-28z" fill="#e3ecff"/></g>
+ <path d="M4 398 122 313h336l118 85v48a36 36 0 0 1-36 36H40a36 36 0 0 1-36-36z" fill="#12152f"/>
+ <g stroke="#565785" stroke-width="1" opacity=".63"><path d="M4 416h572m-551-37h530m-474-32h418m-209-36v170m-45-170-52 170m5-170L91 481m244-170 52 170m-5-170 107 170"/></g>
+ <path d="M99 360v17c0 23 86 42 191 42s191-19 191-42v-17z" fill="#23204c" stroke="#8076bc" stroke-width="2"/>
+ <ellipse cx="290" cy="359" rx="191" ry="41" fill="url(#studio-deck)" stroke="#bca1f4" stroke-width="2"/>
+ <ellipse cx="290" cy="356" rx="165" ry="31" fill="#211f49" stroke="#827add" stroke-width="1.5"/>
+ <path d="M107 378c31 17 103 28 183 28s152-11 183-28" fill="none" stroke="#e1a361" stroke-width="3"/>
+ <g fill="none"><circle cx="290" cy="201" r="93" fill="#171a3d" stroke="#6559a6" stroke-width="10"/><circle cx="290" cy="201" r="88" stroke="url(#studio-metal)" stroke-width="3"/><circle cx="290" cy="201" r="75" stroke="#a59de9" stroke-width="1" stroke-dasharray="2 6"/></g>
+ <path d="m290 124 77 77-77 77-77-77z" fill="#282653" stroke="url(#studio-metal)" stroke-width="2"/>
+ <path d="M251 224v-53h12l27 30 27-30h12v53h-14v-30l-25 27-25-27v30z" fill="url(#studio-metal)"/>
+ <g fill="#ffd98a"><circle cx="290" cy="109" r="4"/><circle cx="382" cy="201" r="4"/><circle cx="198" cy="201" r="4"/><circle cx="290" cy="293" r="4"/><path d="M137 123h21v2h-21zm10-10h2v22h-2zm268 126h22v2h-22zm10-10h2v22h-2z"/></g>
+ <g transform="translate(180 331)"><rect x="0" y="0" width="220" height="50" rx="8" fill="#10152d" stroke="#ffc675" stroke-width="2"/><text x="110" y="32" text-anchor="middle" fill="#ffdf9b" font-family="system-ui, sans-serif" font-size="26" font-weight="850" letter-spacing="1">1 000 000 €</text></g>
+ <text x="290" y="453" text-anchor="middle" fill="#c9c7f3" font-family="monospace" font-size="12" font-weight="700" letter-spacing="4">KVÍZOVÉ ŠTÚDIO</text>
+</svg>`;
+const art={
+books:['Knižnica počas inventúry','<path d="M43 25h194v132H43z" fill="#273647"/><path d="M39 26h202m-194 64h187M42 157h197" stroke="#e2bb8f" stroke-width="6"/><path d="M56 42h17v45H56zm24-7h15v52H80zm25 13h20v39h-20zm35-10h23v49h-23zm33 11h19v38h-19zm30-12h18v50h-18z" fill="#e9b279"/><path d="M56 107h30v43H56zm40-6h18v49H96zm29 12h24v37h-24zm33-8h34v45h-34zm44 6h20v39h-20z" fill="#8ad1b4"/>'],
+stage:['Ilustračný záber pódia','<path d="M47 24l78 125H57zm184 0l-80 125h68z" fill="#a575d3" opacity=".65"/><path d="M40 30h201v119H40z" fill="none" stroke="#c9addf" stroke-width="5"/><path d="M27 150h227" stroke="#e3c698" stroke-width="6"/><circle cx="129" cy="123" r="14" fill="#ffcf81"/><path d="M142 123V68l41-11v52" fill="none" stroke="#ffcf81" stroke-width="7"/><circle cx="171" cy="112" r="14" fill="#ffcf81"/>'],
+seats:['Výrez: ľavý sektor tribúny','<path d="M36 43h209v110H36z" fill="#263956"/><g fill="#7da2ce"><path d="M55 50h24v18H55zm38 0h24v18H93zm38 0h24v18h-24zm38 0h24v18h-24zm38 0h24v18h-24z"/><path d="M55 83h24v18H55zm38 0h24v18H93zm38 0h24v18h-24zm38 0h24v18h-24zm38 0h24v18h-24z"/><path d="M55 116h24v18H55zm38 0h24v18H93zm38 0h24v18h-24zm38 0h24v18h-24zm38 0h24v18h-24z"/></g><path d="M32 61V36h26m164 0h26v25m0 69v25h-26m-164 0H32v-25" fill="none" stroke="#ffd684" stroke-width="3"/>'],
+rain:['Ihrisko na archívnom zábere','<path d="M0 105h280v75H0z" fill="#435f66"/><path d="M21 160c30-34 52-11 85-28s57 4 96-9 73 10 70 23-40 25-90 26-121 1-161-12z" fill="#8cafd2"/><path d="M161 105V58h66v47m-62-38h59m-59 13h59m-59 13h59m-43-33v45m14-45v45m15-45v45" fill="none" stroke="#d5e0ef" stroke-width="2"/><path d="m36 45-8 19m41-31-8 20m43-16-8 19m35-22-8 19m121-12-8 19m28-21-8 19" stroke="#afccee" stroke-width="2"/>'],
+door:['Zatvorené dvere telocvične','<path d="M0 141h280v39H0z" fill="#61708d"/><path d="M61 32h158v130H61z" fill="#2a354d" stroke="#a7b8d6" stroke-width="4"/><path d="M69 40h69v115H69zm73 0h69v115h-69z" fill="#6d6d8e"/><path d="M84 55h36v39H84zm77 0h36v39h-36z" fill="#a3bed8"/><path d="M129 108v19m22-19v19" stroke="#e9d6ab" stroke-width="4"/><rect x="96" y="11" width="90" height="18" rx="4" fill="#c5d6ef"/><path d="M111 20h60" stroke="#334768" stroke-width="3"/>']
+};
+function illustration(k){const a=art[k];return a?`<div class="mini"><svg viewBox="0 0 280 180" role="img" aria-label="${a[0]}"><path d="M0 0h280v180H0z" fill="#384968"/><circle cx="210" cy="65" r="62" fill="#839ac1" opacity=".27"/>${a[1]}</svg><span>${a[0]}</span></div>`:'';}
+const app=document.querySelector('#app'),soundBtn=document.querySelector('#sound'),dialog=document.querySelector('#help');
+const letter=i=>String.fromCharCode(65+i),coins=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ')+' €';
+const safe=x=>String(x).replace(/[&<>"']/g,k=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[k]));
+let sound=true,audio=null,voices=new Set(),mode=1,phase='home',step=0,selected=null,removed=[],article=false,log=[],players=[],ladderOpen=typeof window.matchMedia!=='function'||!window.matchMedia('(max-width:650px)').matches;
+const turn=()=>mode===2?step%2:0;
+const rung=()=>step<4?'Rozbeh':step<8?'Všímaj si detaily':'Finálová zóna';
+const q=()=>questions[step];
+const winnings=()=>log.reduce((win,a,i)=>a.ok?levels[i]:win,0);
+function focus(sel,scroll=false){const e=app.querySelector(sel);if(e){if(!e.matches('button,summary'))e.setAttribute('tabindex','-1');e.focus({preventScroll:true});if(scroll)e.scrollIntoView({block:'nearest'});}}
+function scrollToStart(){window.scrollTo(0,0);}
+const motifs={
+ start:[[261.63,0,.18],[392,.12,.18],[523.25,.25,.34]],
+ select:[[440,0,.10]],
+ lock:[[294,0,.15],[220,.14,.19]],
+ yes:[[392,0,.16],[494,.12,.18],[587,.24,.29],[784,.36,.38]],
+ no:[[392,0,.17],[294,.13,.28]],
+ life:[[587,0,.12],[784,.10,.24]],
+ finish:[[392,0,.20],[523,.14,.22],[659,.30,.27],[784,.48,.42],[1047,.64,.45]]
+};
+function play(name){
+ if(!sound)return;
+ try{
+  const AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;
+  if(!audio)audio=new AC();
+  if(audio.state==='suspended')audio.resume().catch(()=>{});
+  for(const [hz,delay,len] of motifs[name]){
+   const o=audio.createOscillator(),g=audio.createGain(),t=audio.currentTime+delay+.025;
+   o.type=name==='no'?'sine':'triangle';o.frequency.setValueAtTime(hz,t);
+   g.gain.setValueAtTime(.001,t);g.gain.exponentialRampToValueAtTime(.075,t+.018);g.gain.exponentialRampToValueAtTime(.001,t+len);
+   o.connect(g);g.connect(audio.destination);voices.add(o);o.onended=()=>{voices.delete(o);o.disconnect();g.disconnect();};o.start(t);o.stop(t+len+.01);
+  }
+ }catch{}
+}
+soundBtn.addEventListener('click',()=>{
+ sound=!sound;soundBtn.textContent=sound?'Zvuk: zapnutý':'Zvuk: vypnutý';soundBtn.setAttribute('aria-pressed',String(sound));
+ if(sound)play('select');else for(const o of voices){try{o.stop();}catch{}}
+});
+function rules(){return '<ol><li>Prečítaj si titulok a podklad. Vyber jednu zo štyroch možností a potvrď ju tlačidlom <b>Uzamknúť odpoveď</b>.</li><li>Po odpovedi uvidíš riešenie a vysvetlenie, čo zmenilo dojem zo správy. Prvá nesprávna odpoveď ukončí hru. Prečítaj si vysvetlenie a odíď so sumou za poslednú správnu odpoveď.</li><li><b>50 : 50</b> skryje dve nesprávne možnosti. <b>Prečítaj si celý článok</b> otvorí rozšírený text pred odpoveďou. Každý hráč má každú pomôcku raz.</li><li>Hráte vo dvojici? Po správnej odpovedi sa vystriedate na jednom zariadení. Prvá chyba ukončí spoločnú hru. Na konci uvidíte spoločnú výhru aj svoje odpovede.</li></ol><p class="muted">Virtuálna výhra je suma za posledný správne zodpovedaný schod. Sumy sa nesčítavajú. Ak sa pomýliš na prvej otázke, odídeš s 0 €. Hra nemá časový limit.</p>';}
+document.querySelector('#rules').addEventListener('click',()=>{dialog.innerHTML='<h2 id="help-title">Pravidlá hry</h2><div class="rules">'+rules()+'</div><div class="actions"><button class="btn primary" data-close>Zavrieť</button></div>';if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');});
+dialog.addEventListener('click',e=>{if(e.target.closest('[data-close]')){if(typeof dialog.close==='function')dialog.close();else dialog.removeAttribute('open');}});
+function home(){
+ phase='home';
+ app.innerHTML=`<div class="fade"><section class="hero"><div><p class="eyebrow">Manipulácia a clickbait · televízny kvíz</p><h1>Milionár<em>Nenechaj sa nachytať</em></h1><p>Veľké slová, záhadné fotky a správy, ktoré sľubujú viac, než naozaj hovoria. Prejdi dvanásť schodov a zisti, čo titulok skrýva.</p><div class="actions"><button class="btn primary" data-start="1">Hrám sám / sama →</button><button class="btn" data-start="2">Striedame sa →</button></div><div class="ticker"><span class="chip">12 otázok</span><span class="chip">3 úrovne</span><span class="chip">2 pomôcky</span></div></div><div class="hero-art">${heroArt}</div></section><details class="rules"><summary>Ako sa hrá</summary>${rules()}</details></div>`;
+ scrollToStart();
+}
+function start(m){
+ mode=m;step=0;log=[];players=Array.from({length:m},()=>({fifty:false,read:false}));phase='question';selected=null;removed=[];article=false;play('start');render(true);
+}
+function ladder(){
+ return `<details class="ladder" id="ladder" ${ladderOpen?'open':''}><summary>Rebríček výhier</summary><ol reversed>${levels.map((v,i)=>({v,i})).reverse().map(({v,i})=>{const a=log[i];return `<li class="${i===step?'current ':''}${a?'past '+(a.ok?'hit':'miss'):''}" ${i===step?'aria-current="step"':''}><span>${i+1}</span><span>${coins(v)}</span><span aria-label="${a?(a.ok?'Správne':'Nesprávne'):''}">${a?(a.ok?'✓':'×'):''}</span></li>`;}).join('')}</ol></details>`;
+}
+function render(fresh=false,focusSel=null){
+ const item=q(),a=log[step],p=players[turn()];
+ const body=`<p class="eyebrow">${rung()} · ${safe(item.topic)}</p><h2>${safe(item.head)}</h2><p><b>Podklad:</b> ${safe(item.excerpt)}</p>`;
+ app.innerHTML=`<div class="${fresh?'fade':''}"><div class="game-top"><div class="topdata"><span class="badge">Otázka ${step+1} / 12</span><span class="chip">${coins(levels[step])}</span>${mode===2?`<span class="chip">Hráč ${turn()+1}</span>`:''}</div><button class="btn quiet" data-home>Menu</button></div><div class="prog" aria-hidden="true"><i style="width:${(step+1)/12*100}%"></i></div>
+ <div class="game"><section class="board"><section class="news ${item.art?'with-art':''}"><div>${body}</div>${illustration(item.art)}</section>
+ ${article?`<section class="article" id="article" tabindex="-1"><b>Celý článok</b><p>${safe(item.article)}</p></section>`:''}
+ <h1 class="ask">${safe(item.prompt)}</h1><div class="answers" role="group" aria-label="Možnosti odpovede">${item.options.map((o,i)=>{
+ const gone=removed.includes(i),cs=a?(i===item.correct?' correct':i===a.selected?' wrong':''):'';
+ return `<button class="answer${gone?' removed':''}${a?' checked':''}${cs}" data-answer="${i}" aria-pressed="${i===selected}" ${gone||a?'disabled':''}><span>${letter(i)}</span>${gone?'Vyradená možnosť':safe(o)}${a&&i===item.correct?' ✓':a&&i===a.selected?' ×':''}</button>`;
+ }).join('')}</div>
+ ${a?`<section class="feedback" id="feedback" tabindex="-1"><h3>${a.ok?'Správna odpoveď!':'Nesprávna odpoveď – hra sa končí'}</h3><p><b>${letter(item.correct)} ·</b> ${safe(item.options[item.correct])}</p><p>${safe(item.why)}</p>${a.ok?'':`<p><b>Odchádzaš s výhrou: ${coins(winnings())}.</b></p>`}${article?'':`<details><summary>Prečítať celý článok po odpovedi</summary><p>${safe(item.article)}</p></details>`}<button class="btn primary" data-next>${!a.ok?'Ukončiť hru a zobraziť výhru':step===questions.length-1?'Zobraziť výsledky':mode===2?'Odovzdať otázku ďalšiemu hráčovi':'Ďalšia otázka'} →</button></section>`:`<div class="lifes"><button class="btn life ${p.fifty?'used':''}" data-fifty ${p.fifty?'disabled':''}>50 : 50${p.fifty?' · použité':''}</button><button class="btn life ${p.read?'used':''}" data-read ${p.read?'disabled':''}>Prečítaj si celý článok${p.read?' · použité':''}</button></div><div class="actions"><button class="btn primary" data-lock ${selected===null?'disabled':''}>Uzamknúť odpoveď</button></div><p class="hint">Pomôcky máš každú raz. Celý článok si môžeš po odpovedi prečítať aj bez pomôcky.</p>`}
+ </section>${ladder()}</div></div>`;
+ app.querySelector('#ladder').addEventListener('toggle',e=>{ladderOpen=e.currentTarget.open;});
+ if(fresh){scrollToStart();focus('.ask');}
+ else if(focusSel){focus(focusSel,focusSel==='#article'||focusSel==='#feedback');}
+}
+function eliminate(){
+ const p=players[turn()];if(p.fifty||log[step])return;
+ const wrong=[0,1,2,3].filter(i=>i!==q().correct);const spare=wrong[step%3];removed=wrong.filter(i=>i!==spare);
+ p.fifty=true;if(removed.includes(selected))selected=null;play('life');render(false,'[data-answer]:not([disabled])');
+}
+function read(){
+ const p=players[turn()];if(p.read||log[step])return;p.read=true;article=true;play('life');render(false,'#article');
+}
+function lock(){
+ if(selected===null||removed.includes(selected)||log[step])return;
+ log[step]={selected,ok:selected===q().correct,player:turn()};
+ play(log[step].ok?'yes':'no');render(false,'#feedback');
+}
+function next(){
+ if(!log[step])return;
+ if(!log[step].ok){results();return;}
+ step++;selected=null;article=false;removed=[];
+ if(step===questions.length){results();return;}
+ if(mode===1){render(true);return;}
+ phase='handoff';app.innerHTML=`<section class="handoff fade"><p class="eyebrow">Výmena hráčov · otázka ${step+1} / 12</p><h1 class="big">Teraz hrá hráč ${turn()+1}.</h1><p>Odovzdaj zariadenie. Ďalší hráč má vlastné pomôcky a dostane novú otázku.</p><div class="actions"><button class="btn primary" data-resume>Otvoriť otázku →</button></div></section>`;scrollToStart();focus('h1');
+}
+function results(){
+ phase='results';
+ const endedOnError=log.length>0&&!log[log.length-1].ok;
+ if(!endedOnError)play('finish');
+ const correct=log.filter(a=>a.ok).length;
+ const win=winnings();
+ const stats=[['Virtuálna výhra',coins(win)],['Správne odpovede',`${correct}/12`]];
+ if(mode===2)for(let j=0;j<2;j++){
+  const played=log.filter(a=>a.player===j);
+  stats.push([`Hráč ${j+1}`,played.length?`${played.filter(a=>a.ok).length}/${played.length}`:'Bez odpovede']);
+ }
+ app.innerHTML=`<section class="result fade"><p class="eyebrow">${endedOnError?`Hra sa skončila pri otázke ${log.length} z 12`:'Rebríček dokončený'}</p><h1 class="big">${endedOnError?`Odchádzaš s ${coins(win)}`:'Kvíz je za tebou.'}</h1><p>Keď titulok znie príliš dramaticky, porovnaj ho s článkom. Pri obrázku sa pýtaj, čo je mimo záberu a kedy vznikol.</p><div class="stats">${stats.map(([n,v])=>`<div class="stat"><b>${v}</b><span>${n}</span></div>`).join('')}</div><h2>Rozbor otázok</h2>${log.map((a,i)=>{const x=questions[i];return `<details class="review"><summary>${i+1}. ${safe(x.topic)} · ${a.ok?'správne':'pozri vysvetlenie'}${mode===2?' · hráč '+(a.player+1):''}</summary><p><b>Titulok:</b> ${safe(x.head)}</p><p><b>Tvoj výber:</b> ${safe(x.options[a.selected])}<br><b>Správna odpoveď:</b> ${safe(x.options[x.correct])}</p><p>${safe(x.why)}</p></details>`;}).join('')}<div class="actions"><button class="btn primary" data-start="${mode}">Hrať znova</button><button class="btn" data-home>Na úvod</button></div></section>`;scrollToStart();focus('h1');
+}
+app.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b||b.disabled)return;const d=b.dataset;
+ if('start' in d)start(Number(d.start));
+ else if('home' in d){if(phase!=='question'||confirm('Vrátiť sa na úvod? Rozohraný kvíz sa neuloží.'))home();}
+ else if('resume' in d&&phase==='handoff'){phase='question';play('select');render(true);}
+ else if(phase==='question'){
+  if('answer' in d&&!log[step]&&!removed.includes(Number(d.answer))){selected=Number(d.answer);play('select');render(false,`[data-answer="${selected}"]`);}
+  else if('lock' in d)lock();
+  else if('fifty' in d)eliminate();
+  else if('read' in d)read();
+  else if('next' in d)next();
+ }
+});
+home();
+})();
+</script></body></html>

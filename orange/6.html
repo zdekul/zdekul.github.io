@@ -1,0 +1,208 @@
+<!doctype html><html lang="sk"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>Čo odpíšeš? · Digitálna odolnosť</title>
+<style>
+:root{--bg:#101526;--surface:#1a2239;--line:#414e6b;--ink:#f5f5ff;--muted:#c7cee3;--mint:#c3f89e;--violet:#d6c0ff;--blue:#b6d8ff;--gold:#ffd793}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 12% 0,#293e54 0,transparent 42%),radial-gradient(ellipse at 95% 3%,#49355b 0,transparent 40%),var(--bg);color:var(--ink);font:16px/1.45 system-ui,Segoe UI,sans-serif}button{font:inherit;color:inherit}button{cursor:pointer;touch-action:manipulation}button:disabled{cursor:default}button:focus-visible,[tabindex="-1"]:focus-visible{outline:3px solid var(--gold);outline-offset:3px}h1,h2,h3,p{margin:0}.wrap{width:min(1080px,calc(100% - 32px));margin:auto}.mast{padding:11px 0;border-bottom:1px solid #a2a8ce45;display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--muted);font-size:.76rem;font-weight:750}.brand{color:#142a24;background:var(--mint);border-radius:6px;padding:4px 7px;letter-spacing:.08em;text-transform:uppercase}.hero{padding:15px 0 11px}.hero h1{font-size:clamp(2.6rem,7vw,4.45rem);letter-spacing:-.06em;line-height:1}.hero h1 span{color:var(--mint)}.hero p{margin-top:5px;color:var(--muted);font-size:.91rem}.progress{list-style:none;padding:0;margin:0 0 10px;display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.progress li{padding:5px 7px;border:1px solid var(--line);border-radius:8px;color:var(--muted);font-size:.75rem;font-weight:780;background:#1d263d}.progress li[aria-current]{background:#30483e;color:#dcffbc;border-color:#9ec68c}.progress li.done{color:#ceebcd}.grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:12px;align-items:start}.phone,.side,.results{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:var(--surface);box-shadow:0 10px 32px #080d1770}.chathead{background:#252e4a;padding:10px 11px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line)}.chathead strong{display:block;font-size:.94rem}.chathead small{display:block;color:var(--muted);font-size:.72rem}.chathead .tag{margin-left:auto;font-size:.66rem;white-space:nowrap;background:#384362;padding:3px 6px;border-radius:6px;color:#e4e8fc}.av{width:29px;height:29px;flex:none;border-radius:10px;display:grid;place-items:center;font-size:.68rem;font-weight:880;background:#485584;color:white;border:1px solid #ffffff36}.chathead .av{width:36px;height:36px;background:#60558e}.msg .av[data-c="1"]{background:#62467e}.msg .av[data-c="2"]{background:#2f5b63}.msg .av[data-c="3"]{background:#7a4d4f}.log{height:clamp(240px,41vh,390px);min-width:0;overflow:auto;padding:10px 10px 12px;background:radial-gradient(circle at 2px 2px,#8793ca19 1px,transparent 1.3px) 0 0/16px 16px,#141c2f;scrollbar-color:#657196 #1b243c}.msg{display:flex;align-items:end;gap:6px;margin-bottom:7px}.msg>div:last-child{max-width:87%}.msg strong{display:block;color:var(--violet);font-size:.7rem;margin:0 0 2px 5px}.bubble{background:#2a3552;border:1px solid #4a5774;border-radius:11px 11px 11px 3px;padding:6px 8px;font-size:.85rem;overflow-wrap:anywhere;white-space:pre-wrap}.msg.you{justify-content:flex-end}.msg.you strong{text-align:right;color:var(--mint)}.msg.you .bubble{background:#324e48;border-color:#517c6c;border-radius:11px 11px 3px 11px}.msg.system{justify-content:center;text-align:center}.msg.system .bubble{background:#252e45;color:#e5d7ff;border:1px dashed #6e688f;font-size:.74rem;border-radius:8px}.side,.results{padding:12px}.kicker{font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;font-weight:850;color:var(--mint);margin-bottom:4px}.side h2,.results h2{font-size:clamp(1.25rem,3vw,1.9rem);line-height:1.12;letter-spacing:-.035em}.lead{font-size:.86rem;color:var(--muted);margin:6px 0 9px}.opts,.actions{display:grid;gap:5px}.btn{border:1px solid #627294;border-radius:8px;background:#283650;padding:7px 9px;min-height:41px;font-weight:780;font-size:.85rem}.btn:hover:not(:disabled){background:#3b4a69}.btn.primary{background:var(--mint);border-color:var(--mint);color:#183022}.btn.primary:hover:not(:disabled){background:#e4ffca}.btn.choice{text-align:left;display:flex;flex-direction:column;gap:1px}.btn.choice span{font-weight:650;font-size:.72rem;color:var(--muted)}.btn.correct{background:#244738;border-color:#93cf9c}.btn.wrong{background:#572f42;border-color:#e2a4a5}.btn[aria-pressed=true]{border-color:var(--mint);color:var(--mint)}.note{background:#2b3452;border-left:3px solid var(--violet);border-radius:8px;padding:8px;margin:8px 0;font-size:.84rem}.actions{margin-top:8px}.route{display:flex;gap:4px;margin:6px 0 7px;flex-wrap:wrap}.route .btn{min-height:34px;font-size:.74rem}.rewind{margin-top:9px}.foot{color:var(--muted);font-size:.76rem;padding:12px 0 17px}.foot summary{color:var(--blue);cursor:pointer}.foot p{margin-top:4px}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}.results ol{padding-left:22px}.results li{padding:3px 0}.results .btn{margin-top:7px}
+@media(max-width:690px){.wrap{width:calc(100% - 20px)}.hero{padding:9px 0 8px}.grid{grid-template-columns:1fr;gap:8px}.progress{gap:3px;margin-bottom:7px}.progress li{padding:4px;font-size:.64rem}.log{height:clamp(172px,28vh,265px)}.mast{padding:7px 0}.side{padding:9px}.side h2{font-size:1.22rem}.hero p{font-size:.82rem}}@media(max-width:360px){.progress .label{display:none}.progress [aria-current] .label{display:inline}.progress{grid-template-columns:1fr 1fr 1fr 1fr 1fr}.chathead small{font-size:.66rem}}
+.safety{padding:7px 10px;margin:0 0 8px;border-radius:8px;background:#513346;border:1px solid #a7748d;color:#ffe3ec;font-size:.82rem}.safety strong{display:block;color:#ffe9b1}.msg.removed .bubble{font-style:italic;border-style:dashed;color:#eee0ea;background:#3d3247}.msg.reported .bubble{border-color:#ce91a3}.status-line{display:block;margin-top:3px;font-size:.69rem;font-weight:800;color:#ffe0b5}.safety .sent-quote{display:block;margin:3px 0;overflow-wrap:anywhere;color:#fff2f6}.msg.mod strong{color:var(--gold)}.msg.mod .av{background:#745638;color:#fff0ce}.msg.mod .bubble{background:#4b3b42;border-color:#997455}.chathead .tag.restricted{background:#6b3c55;color:#fff2f6}.btn.risky{border-color:#bd8a94}.btn.risky span{color:#ffc5cb}
+.choose-guide{display:flex;width:100%;border:0;border-top:1px solid #6b9175;align-items:center;justify-content:space-between;gap:9px;background:#29493e;color:#efffe8;padding:10px 13px;text-align:left}.choose-guide:hover{background:#355c4e}.choose-guide strong,.choose-guide small{display:block}.choose-guide small{margin-top:2px;font-size:.74rem;color:#d9f4dc}.cue-arrow{font-size:1.32rem;font-weight:900}.choose-guide .below-label{display:none}.choice-panel{border-color:#91b39a;box-shadow:0 0 0 1px #90bb9733}.choice-head{margin:-12px -12px 10px;padding:7px 12px;background:var(--mint);color:#173127;font-size:.82rem;font-weight:880}.side:not(.choice-panel) .choice-head{background:#343f60;color:#f2f4ff}.btn.selectable{display:grid;grid-template-columns:23px 1fr 10px;align-items:center;gap:7px;border-color:#8197ac;padding:7px 8px}.btn.selectable.risky{border-color:#bd8a94}.btn.selectable .option-num{display:grid;place-items:center;width:23px;height:23px;border-radius:7px;background:#3c5c53;color:#e8ffdd;font-size:.72rem}.btn.selectable .option-copy{min-width:0;color:var(--ink);display:grid;gap:2px}.option-copy small{color:var(--muted);font-size:.69rem}.option-copy strong{font-size:.81rem;line-height:1.25}.btn.selectable .option-arrow{font-size:1rem;color:var(--mint)}
+@media(max-width:690px){.choose-guide .right-label{display:none}.choose-guide .below-label{display:inline}.choice-head{margin:-9px -9px 8px;padding:6px 9px}.choose-guide{padding:8px 10px}}
+</style></head><body>
+<header class="wrap mast"><span class="brand">Digitálna odolnosť · 06</span><span>Nátlak v skupinovom chate</span></header>
+<main class="wrap"><header class="hero"><h1>Čo <span>odpíšeš?</span></h1><p>Prečítaj si chat a klikni na jednu z ponúknutých odpovedí. Postavy na ňu hneď zareagujú.</p></header><noscript><p>Otvor súbor v prehliadači so zapnutým JavaScriptom.</p></noscript><div id="app"></div><p id="live" class="sr" role="status" aria-live="polite"></p></main>
+<footer class="wrap foot"><details><summary>Ako funguje cvičný chat?</summary><p>Vyber jednu z ponúknutých odpovedí. Postavy zareagujú podľa tvojho výberu a príbeh bude pokračovať. Zásah správcu je súčasťou simulácie. Ak chceš porovnať následky, vráť sa k rozhodnutiu a vyber inú možnosť.</p></details></footer>
+<script>
+(()=>{
+'use strict';
+const cases=[
+ {short:'Fotka',title:'„Pošli tú fotku.“',room:'Partia po škole',lead:'V mobile máš fotku Niny z výletu. Nina ti ju poslala súkromne a nepovedala, že ju môžeš poslať ďalej.',target:'Nina',push:'Lukáš',ally:'Ela',chat:[['Lukáš','Hoď sem tú fotku Niny z autobusu 😂'],['Ela','Vie o tom Nina?'],['Lukáš','Veď je to len naša skupina. Pošli.']], stop:'Bez Nininho súhlasu ju neposielam.',private:'Ahoj, v skupine pýtajú tvoju fotku. Neposielam ju. Si v pohode?',yield:'Dobre, tak ju prepošlem.',neutral:'Môžeme riešiť niečo iné?', trust:'Vďaka, že si sa ozval/a. Nechcem, aby tú fotku mali v skupine.',more:'Tak aspoň ukáž výrez. Tam ju skoro nevidno.',fallout:'Niekto píše, že fotku už uložil. Nina sa pýta, prečo sa k nim dostala.',shift:'Chvíľu sa rieši iná téma. Potom sa Lukáš znova spýta na fotku.',safe:'Nemusíš sa vyhovárať. Stačí povedať, že ju bez súhlasu neposielaš. Ak sa skupina ozýva ďalej, rozhovor ukonči a podľa potreby sa obráť na niekoho, komu dôveruješ.',q:'Zmení niečo na súhlase veta „je to len v našej skupine“?',opts:['Áno, v uzavretej skupine súhlas netreba.','Nie. Aj odtiaľ môže niekto fotku uložiť alebo poslať ďalej.','Áno, keď fotku pošlem iba na pár sekúnd.'],ok:1,why:'Uzavretý chat stále znamená ďalších ľudí. Súkromne poslaná fotka nie je automaticky určená na zdieľanie.'},
+ {short:'Nátlak',title:'„Ak si náš, tak to spravíš.“',room:'Turnaj v piatok',lead:'V chate plánujete turnaj. Tomáš chce, aby si mu poslal súkromnú hlasovku Miša. Začína podmieňovať tvoju účasť tým, že poslúchneš.',target:'Mišo',push:'Tomáš',ally:'Sára',chat:[['Tomáš','Pošli Mišovu hlasovku, chcem počuť, čo povedal.'],['Sára','To bolo medzi nimi, nie?'],['Tomáš','Ak si náš, tak pošli. Inak ťa v piatok neberieme.']],stop:'Hlasovku neposielam. Na turnaji sa dohodnime bez podmienok.',private:'Ahoj, pýtajú tvoju hlasovku. Nedám im ju. Chceš o tom vedieť viac?',yield:'Dobre, pošlem ju, len ma nevyraďte.',neutral:'Nechajme to radšej na zajtra.',trust:'Vďaka, neposielaj ju. Sára by nás mohla podporiť, keby to pokračovalo.',more:'Len jednu vetu. Fakt kvôli tomu nebudeš hrať?',fallout:'Hlasovka je v skupine. Tomáš teraz chce aj ďalšiu. Nátlak sa tým neskončil.',shift:'Tomáš zopakuje, že účasť na turnaji závisí od hlasovky.',safe:'„Ak si náš, tak…“ je nátlak. Hranicu môžeš pokojne zopakovať a prestať sa dohadovať. Ak ťa kvôli nej opakovane vylučujú, povedz to dospelému, ktorému dôveruješ.',q:'Čo je najlepším znakom nátlaku v tejto situácii?',opts:['Tomáš píše krátke správy.','Turnaj je v piatok.','Tomáš podmieňuje účasť tým, že prepošleš súkromnú správu.'],ok:2,why:'Keď niekto podmieňuje tvoje prijatie tým, že prekročíš hranicu, snaží sa ťa dotlačiť k rozhodnutiu.'},
+ {short:'Svedok',title:'„Všetci sa na tom bavia.“',room:'Naša trieda',lead:'Niekto už vložil upravenú fotku Nely, aby sa jej smiali. Ty si ju neposlal/a. Vieš ovplyvniť, či sa bude ďalej šíriť.',target:'Nela',push:'Robo',ally:'Lea',chat:[['Robo','Tak toto si dajte ako nálepku všade 💀'],['Lea','Neviem, či je Nele z toho do smiechu.'],['Robo','No tak. Pošli to ešte do vedľajšej skupiny.']],stop:'Ďalej to neposielam. Zmažte to, prosím.',private:'Vidím, čo sa deje v skupine. Nešírim to. Chceš, aby som ti pomohol/pomohla?',yield:'Prepošlem to aj do vedľajšej skupiny.',neutral:'Zmeňme tému, dobre?',trust:'Vďaka, že si sa spýtal/a. Chcem, aby to zmazali. Nechcem to vidieť v ďalšej skupine.',more:'Veď to už videli skoro všetci. Jedno preposlanie nič nezmení.',fallout:'V druhej skupine sa pridajú ďalší. Ľudí, ktorí fotku videli, pribudlo.',shift:'V skupine príde iná správa, ale nálepku ďalej používajú.',safe:'Pomôcť vie aj svedok: nerozširuj fotku, oslov Nelu súkromne a dohodni sa s ňou na ďalšom kroku. Príspevok môžeš nahlásiť aj bez toho, aby si ho posielal ďalej.',q:'Chceš požiadať o pomoc. Čo vieš odovzdať bez ďalšieho šírenia fotky?',opts:['Názov skupiny, čas a opis správ; fotku ďalej neposielam.','Pošlem fotku každému kamarátovi ako dôkaz.','Pridám fotku na verejný profil a požiadam ľudí o názor.'],ok:0,why:'Dospelému môžeš povedať, kde a kedy sa to stalo, a opísať priebeh. Keď to treba, ukáž mu pôvodný chat na zariadení.'},
+ {short:'Oprava',title:'„Už som to preposlal/a.“',room:'Výlet 8.B',lead:'Pred chvíľou si poslal/a súkromnú fotku Alexa do skupiny. Teraz ti píše, že s tým nesúhlasil. Stále môžeš zastaviť ďalšie šírenie.',target:'Alex',push:'Dano',ally:'Kika',chat:[['Alex','Prosím, zmaž to. Tá fotka nebola pre skupinu.'],['Dano','Už ju mám, pošli ju aj do skupiny výletu.'],['Kika','Alex jasne napísal, že to nechce.']],stop:'Zmažem ju, kde sa dá. Prosím, neposielajte ju ďalej.',private:'Prepáč, nemal/a som ju poslať. Zmažem ju, kde sa dá, a požiadam ostatných, aby ju nešírili.',yield:'Aj tak ju už máte, pošlem ju aj ďalej.',neutral:'Prestaňme to riešiť, prosím.',trust:'Ďakujem za ospravedlnenie. Pomôže, keď skupine povieš, aby fotku nešírila.',more:'A čo ak ju už niekto uložil?',fallout:'V novej skupine sa pridajú reakcie. Alex musí znovu žiadať o odstránenie.',shift:'Diskusia stíchne, ale fotka zostáva v skupine.',safe:'Uznaj chybu, ospravedlň sa a zmaž správu, ak môžeš. Požiadaj ľudí, aby ju ďalej nešírili. Zmazanie správy neodstráni kópie, ktoré si už niekto uložil.',q:'Ktorá reakcia po chybe najviac pomáha?',opts:['Všetko nechať tak, lebo je už neskoro.','Napísať „nič sa nestalo“ a zmeniť tému.','Ospravedlniť sa, zmazať správu, ak sa dá, a poprosiť ostatných, aby ju nešírili.'],ok:2,why:'Nezmeníš to, čo už ľudia videli, ale môžeš prevziať zodpovednosť a obmedziť ďalšie šírenie.'},
+ {short:'Pomoc',title:'„Píšu mi aj mimo skupiny.“',room:'Večerný chat',lead:'Už si odmietol/odmietla poslať fotku Lindy. Tlak však pokračuje v skupine aj v súkromných správach.',target:'Linda',push:'Patrik',ally:'Mia',chat:[['Patrik','Keď to nechceš dať sem, pošli mi to súkromne.'],['Mia','Patrik, už ti predsa povedal/a nie.'],['Patrik','Tak napíšem ešte neskôr. Zmeníš názor.']],stop:'Už som odpovedal/a. Fotku neposielam. Ďalšie správy riešiť nebudem.',private:'Pýtajú tvoju fotku aj súkromne. Neposielam ju. Ak chceš, môžeme to povedať niekomu, komu veríme.',yield:'Pošlem ju súkromne, aby už prestal.',neutral:'Možno inokedy.',trust:'Ďakujem. Poďme spolu za niekým, komu dôverujeme. Nechcem na to byť sama.',more:'Tak ti napíšem z iného chatu.',fallout:'Patrik chce ďalšiu fotku. Ustúpenie nezaručilo koniec správ.',shift:'Patrik berie „inokedy“ ako dôvod, aby sa ozval znova.',safe:'Nemusíš stále odpisovať. Stíšenie, blokovanie alebo nahlásenie môže pomôcť. Pri opakovanom nátlaku sa obráť na dôveryhodného dospelého a opíš, čo sa deje.',q:'Odišiel/odišla si zo skupiny, ale správy chodia ďalej. Čo teraz?',opts:['Odpovedám na každú správu a snažím sa ho presvedčiť.','Nemusím odpovedať. Môžem obmedziť kontakt, nahlásiť správy a povedať to dôveryhodnému dospelému.','Pošlem fotku, aby už dal pokoj.'],ok:1,why:'Odchod zo skupiny ukončí účasť v tej skupine. Ak tlak pokračuje inde, pomôže aj obmedziť kontakt, nahlásiť správy a vyhľadať podporu.'}
+];
+const labels={mock:'Pridať sa k výsmechu',stop:'Odpovedať v skupine',repair:'Zastaviť šírenie',support:'Napísať súkromne',help:'Požiadať o pomoc',leave:'Ukončiť rozhovor',yield:'Ustúpiť tlaku',neutral:'Zmeniť tému'};
+const app=document.querySelector('#app'), live=document.querySelector('#live');
+const esc=t=>String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+let s;
+const caseNow=()=>cases[s.i];
+function load(i,records=[],replay=false){s={i,records,replay,stage:'chat',turn:0,room:'group',left:false,restricted:false,report:null,log:cases[i].chat.map(([who,text])=>({who,text})),moves:[],snap:[],pick:null};}
+const say=(who,text)=>s.log.push({who,text});
+const sys=text=>say('@',text);
+function proposals(){
+ const c=caseNow(), prev=s.moves.at(-1);
+ if(!prev)return [
+  [s.i===3?'repair':'stop',c.stop,'group'],
+  ['support',c.private,'private'],['leave','Prestanem odpisovať a odídem zo skupiny.','leave'],
+  ['yield',c.yield,'group'],['neutral',c.neutral,'group'],
+  ['mock','Dajme to aj do ďalšej skupiny, nech sa všetci zasmejú.','group']
+ ];
+ const fix=s.i===3||s.moves.includes('yield');
+ const base=[
+  ['help','Poviem dôveryhodnému dospelému, kto mi píše a čo sa deje. Nič ďalšie neprepošlem.','adult'],
+  ['repair',fix?'Skúsim správu odstrániť a poprosím ostatných, aby ju už nešírili.':'Požiadam, aby sa to nešírilo. Ak sa to objaví v chate, môžem správu nahlásiť.','group'],
+  ['support',c.private,'private'],['leave','Prestanem reagovať. Podľa potreby obmedzím ďalší kontakt.','leave'],
+  ['stop',c.stop,'group'],['yield',c.yield,'group'],['neutral',c.neutral,'group']
+ ];
+ if(s.restricted)return [
+  ['repair','Prepáč. Ako môžem pomôcť zastaviť ďalšie šírenie?','admin'],
+  ['support','Prepáč, nemal/a som to spraviť. Čo by ti teraz pomohlo?','private'],
+  ['help','Poviem dôveryhodnému dospelému, čo sa stalo, a poprosím o pomoc.','adult']
+ ];
+ const order={mock:[1,2,0],stop:[3,0,4],support:[0,1,3],leave:[2,0,6],yield:[1,2,6],help:[3,2,6],repair:[2,0,6],neutral:[4,2,5]};
+ return (s.left?[2,0,3]:order[prev]).map(i=>base[i]);
+}
+function routeFor(kind,room,text=''){
+ if(kind==='yield')return room==='private'||/\bsukromne\b/.test(norm(text))?'requester':'group';
+ if(kind==='mock')return 'group';
+ if(room==='admin'||(s.restricted&&kind==='repair'&&room==='group'))return 'admin';
+ return ({support:'private',help:'adult',leave:'leave'})[kind]||(room==='private'?'private':'group');
+}
+function report(kind){
+ const c=caseNow(), forwarded=kind==='yield';
+ const i=s.log.map(m=>m.who).lastIndexOf('Ty');
+ if(i>=0){
+  const original=s.log[i];
+  s.report={forwarded,text:forwarded?original.text:''};
+  s.log[i]=forwarded?{...original,reported:true}:{who:'Ty',text:'Správu odstránil správca.',reported:true,removed:true};
+ }
+ say(c.ally,forwarded?'Nahlasujem preposlanie. Tento súbor nebol určený na zdieľanie.':'Nahlasujem tú správu. Pridáva sa k výsmechu a nabáda šíriť súkromný obsah.');
+ sys('Nahlásenie dostal správca skupiny.');
+ say('Správca',forwarded?'Zdieľaný súbor som odstránil z chatu, kde ho môžem moderovať. V skupine teraz nemôžeš písať.':'Správu som odstránil. V skupine teraz nemôžeš písať. Výsmech a nabádanie na šírenie súkromného obsahu sem nepatria.');
+ if(forwarded)sys('Prílohu odstránil správca. Niekto už môže mať jej kópiu.');
+ s.restricted=true;s.room='group';
+ sys('Písanie do skupiny je do konca tejto situácie pozastavené. Môžeš sa ozvať súkromne alebo kontaktovať správcu.');
+}
+function respond(kind){
+ const c=caseNow(), second=s.turn===1;
+ if(s.room==='admin'){
+  say('Správca','Vďaka, že chceš situáciu napraviť. Môžeš sa ospravedlniť, neposielať obsah ďalej a pomôcť zastaviť šírenie. Obmedzenie písania zatiaľ platí.');
+  return;
+ }
+ if(s.room==='private'&&!['support','yield','mock'].includes(kind)){
+  if(kind==='repair')say(c.target,'Vďaka, že to chceš riešiť. Dohodnime sa, ako zastaviť ďalšie šírenie.');
+  else if(kind==='stop')say(c.target,'Vďaka, že to neposielaš ďalej. Ak tlak pokračuje, môžeme sa obrátiť na niekoho, komu dôverujeme.');
+  else say(c.target,'Nie som si istý/istá, čo sa teraz stane s tou správou. Môžeme sa dohodnúť, že ju nebudeme šíriť?');
+  return;
+ }
+ if(kind==='stop'){
+  say(c.push,second?'Dobre, už mi nič neposielaj.':c.more);
+  say(c.ally,second?'Vďaka, že si to povedal/a jasne.':'Je v poriadku povedať nie. Nemusíš to obhajovať.');
+ }else if(kind==='support'){
+  say(c.target,c.trust);
+  if(second)say(c.target,'Poďme sa dohodnúť, čo bude ďalej. Je fajn, že si sa najprv spýtal/a.');
+ }else if(kind==='leave'){
+  sys(s.left?'Ďalej už na správy nereaguješ.':'Skupinový rozhovor si ukončil/a.');
+  s.left=true;
+  if(!second){sys('Nová súkromná správa');say(c.ally,'Vidím, že si odišiel/odišla. Ak chceš, môžem ti pomôcť riešiť to ďalej.');}
+  else sys('Ak sa ozvú inde, môžeš obmedziť kontakt alebo vyhľadať pomoc.');
+ }else if(kind==='yield'){
+  sys('V simulácii si súbor preposlal/a. Žiadny skutočný súbor sa neposlal.');
+  if(s.room==='requester'){
+   say(c.push,'Správu som dostal/a. Už ju môže mať aj niekto ďalší.');
+   sys('Spolužiaci sa o preposlaní dozvedeli. Jeden z nich sa ozval správcovi skupiny.');
+  }else say(c.ally,c.fallout);
+  report(kind);
+ }else if(kind==='mock'){
+  say(c.ally,'Mne to nepríde vtipné. Skús si predstaviť, že sa skupina smeje na tebe.');
+  report(kind);
+ }else if(kind==='help'){
+  say('Dôveryhodný dospelý','Ďakujem, že mi to hovoríš. Ukáž mi, kde sa to deje, alebo mi opíš správy. Obsah nemusíš preposielať.');
+  if(second)say('Dôveryhodný dospelý','Dohodneme sa, ako zastaviť ďalšie správy a komu ich môžeme nahlásiť.');
+ }else if(kind==='repair'){
+  sys(s.i===3||s.moves.includes('yield')?'Požiadal/a si o odstránenie a zastavenie šírenia.':'Požiadal/a si o zastavenie šírenia.');
+  say(c.ally,s.i===3||s.moves.includes('yield')?'Pomôžem ti pripomenúť, aby to nik neposielal ďalej. Niektorí už môžu mať kópiu.':'Súhlasím, nerozširujme to. Ak to niekto zverejní, dá sa to nahlásiť.');
+ }else{
+  say(c.ally,c.shift);
+  if(second)sys('Zmena témy zatiaľ problém nevyriešila.');
+ }
+}
+function send(kind,text,room){
+ if(s.stage!=='chat'||!Object.hasOwn(labels,kind))return;
+ const dest=routeFor(kind,room,text);
+ if((s.restricted||s.left)&&(dest==='group'||dest==='requester'))return;
+ s.snap.push({log:s.log.length,room:s.room,left:s.left,restricted:s.restricted,report:s.report,moves:[...s.moves]});
+ s.room=dest;
+ if(s.room==='private')sys('Súkromný chat · '+caseNow().target);
+ if(s.room==='admin')sys('Súkromný rozhovor · správca skupiny');
+ if(s.room==='requester')sys('Súkromný rozhovor · '+caseNow().push);
+ if(s.room==='adult')sys('Súkromný rozhovor · dôveryhodný dospelý');
+ if(s.room==='group'&&s.snap.at(-1).room!=='group')sys('Späť v skupinovom rozhovore');
+ say('Ty',text);respond(kind);
+ if(s.room==='leave'&&s.turn===0)s.room='ally';
+ s.moves.push(kind);s.turn++;
+ if(s.turn===2)s.stage='quiz';
+ live.textContent=((kind==='yield'||kind==='mock')?'Správa nahlásená. Správca pozastavil písanie do skupiny. ':'Nová reakcia v chate. ')+(s.stage==='quiz'?'Teraz krátka otázka.':'Vyber ďalší krok.');
+ render('#task');
+}
+function rewind(index){
+ const snap=s.snap[index];
+ if(!snap)return;
+ s.log=s.log.slice(0,snap.log);s.room=snap.room;s.left=snap.left;s.restricted=snap.restricted;s.report=snap.report;s.moves=snap.moves;
+ s.snap=s.snap.slice(0,index);s.turn=index;s.stage='chat';s.pick=null;
+ render('#task');
+}
+function message(m){
+ if(m.who==='@')return '<div class="msg system"><div class="bubble">'+esc(m.text)+'</div></div>';
+ const you=m.who==='Ty', mod=m.who==='Správca', n=m.who===caseNow().push?1:m.who===caseNow().target?2:3;
+ return '<div class="msg '+(you?'you':mod?'mod':'')+(m.removed?' removed':'')+(m.reported?' reported':'')+'">'+(you?'':'<span class="av" data-c="'+n+'" aria-hidden="true">'+esc(m.who.slice(0,2).toUpperCase())+'</span>')+'<div><strong>'+esc(m.who)+'</strong><div class="bubble">'+esc(m.text)+(m.reported?'<span class="status-line">⚑ Nahlásené ako nevhodné</span>':'')+'</div></div></div>';
+}
+function phone(){
+ const c=caseNow();
+ const room={group:[c.room,'Skupinový rozhovor','#'],admin:['Správca skupiny','Súkromný rozhovor','S'],requester:[c.push,'Súkromný rozhovor',c.push[0]],private:[c.target,'Súkromný rozhovor',c.target[0]],adult:['Dôveryhodný dospelý','Súkromný rozhovor','P'],leave:['Rozhovor ukončený','Už nie si v skupine','↗'],ally:[c.ally,'Súkromná správa po odchode',c.ally[0]]}[s.room];
+ const title=s.stage==='quiz'?'Vyber odpoveď na otázku':s.stage==='review'?'Pozri si vysvetlenie':'Vyber odpoveď';
+ return '<section class="phone" aria-label="Cvičný rozhovor"><header class="chathead"><span class="av" aria-hidden="true">'+esc(room[2])+'</span><div><strong>'+esc(room[0])+'</strong><small>'+room[1]+'</small></div><span class="tag '+(s.restricted?'restricted':'')+'">'+(s.restricted?'Skupina: obmedzenie':'Cvičný chat')+'</span></header><div class="log" id="log" role="region" aria-label="Správy v príbehu" tabindex="0">'+s.log.map(message).join('')+'</div><button class="choose-guide" type="button" data-show-choices><span><strong>'+title+' <span class="right-label">vpravo</span><span class="below-label">pod chatom</span></strong>'+(s.stage==='chat'?'<small>Pokračuj kliknutím na jednu z možností.</small>':'')+'</span><span class="right-label cue-arrow" aria-hidden="true">→</span><span class="below-label cue-arrow" aria-hidden="true">↓</span></button></section>';
+}
+function rewindUI(){
+ return s.snap.length?'<div class="route rewind"><button type="button" class="btn" data-back="'+(s.snap.length-1)+'">↶ Zmeniť posledné rozhodnutie</button>'+(s.snap.length>1?'<button type="button" class="btn" data-back="0">↶ Vrátiť sa na začiatok situácie</button>':'')+'</div>':'';
+}
+function side(){
+ const c=caseNow();
+ let title, lead, body;
+ if(s.stage==='chat'){
+  title=s.turn?'Čo spravíš teraz?':c.title;
+  lead=s.turn?'Prečítaj si novú reakciu v chate a vyber ďalší krok.':c.lead;
+  body='<div class="opts" id="options">'+proposals().map(([k,text],i)=>'<button type="button" class="btn choice selectable '+(['yield','mock'].includes(k)?'risky':'')+'" data-proposal="'+i+'"><span class="option-num" aria-hidden="true">'+(i+1)+'</span><span class="option-copy"><small>'+esc(labels[k])+'</small><strong>'+esc(text)+'</strong></span><span class="option-arrow" aria-hidden="true">›</span></button>').join('')+'</div>';
+ }else{
+  const answered=s.stage==='review';
+  title=c.q;lead='Klikni na jednu odpoveď a pozri si vysvetlenie.';
+  body='<div class="opts">'+c.opts.map((text,i)=>'<button type="button" class="btn choice '+(answered?(i===c.ok?'correct':i===s.pick?'wrong':''):'')+'" data-quiz="'+i+'" '+(answered?'disabled':'')+'>'+esc(text)+(answered?(i===c.ok?' ✓':i===s.pick?' ×':''):'')+'</button>').join('')+'</div>'+
+  (answered?'<div class="note" id="feedback" tabindex="-1"><strong>'+(s.pick===c.ok?'Správne.':'Pozri na označenú odpoveď.')+'</strong> '+c.why+'<p style="margin-top:6px"><strong>Čo sa dá urobiť:</strong> '+c.safe+'</p></div><div class="actions"><button type="button" class="btn primary" data-next>'+(s.replay||s.i===cases.length-1?'Prejsť na výsledky':'Ďalší príbeh')+' →</button></div>':'');
+ }
+ return '<section class="side '+(s.stage==='chat'?'choice-panel':'')+'" aria-labelledby="task"><div class="choice-head"><span>'+(s.stage==='chat'?'Vyber jednu odpoveď':s.stage==='quiz'?'Otázka po rozhovore':'Vysvetlenie')+'</span></div><p class="kicker">Príbeh '+(s.i+1)+' / '+cases.length+' · '+c.short+'</p><h2 id="task" tabindex="-1">'+title+'</h2><p class="lead">'+lead+'</p>'+(s.restricted?'<p class="safety"><strong>⚑ Nahlásené ako nevhodné</strong>'+(s.report?.forwarded?'<span class="sent-quote">Tvoja správa: „'+esc(s.report.text)+'“</span>':'')+'Správca ti pozastavil písanie do skupiny. Súkromne môžeš pomôcť situáciu napraviť.</p>':'')+body+rewindUI()+'</section>';
+}
+function results(){
+ const score=s.records.filter(Boolean).length;
+ return '<section class="results"><p class="kicker">Rozhovory dokončené</p><h2 id="task" tabindex="-1">'+score+' / '+cases.length+' správnych odpovedí</h2><p class="lead">V skupine môžeš nastaviť hranicu, prestať reagovať alebo vyhľadať pomoc. Ak sa niečo šíri bez súhlasu, nepodporuj ďalšie zdieľanie. Na výbere jednej odpovede v chate nezávisí, či si zaslúžiš pomoc.</p><ol>'+cases.map((c,i)=>'<li><strong>'+c.short+'</strong> · '+c.safe+'<br><button type="button" class="btn" data-replay="'+i+'">Skúsiť inú cestu</button></li>').join('')+'</ol><button type="button" class="btn primary" data-reset>Začať odznova ↻</button></section>';
+}
+function render(focus){
+ const progress='<ol class="progress" aria-label="Postup">'+cases.map((c,i)=>'<li '+(i===s.i&&s.stage!=='end'?'aria-current="step"':i<s.i||s.stage==='end'?'class="done"':'')+'>'+(i+1)+' <span class="label">'+c.short+'</span></li>').join('')+'</ol>';
+ app.innerHTML=progress+(s.stage==='end'?results():'<div class="grid">'+phone()+side()+'</div>');
+ if(focus)app.querySelector(focus)?.focus({preventScroll:true});
+ const log=app.querySelector('#log');if(log)log.scrollTop=log.scrollHeight;
+ if(focus){const focused=app.querySelector(focus);if(focused&&typeof focused.getBoundingClientRect==='function'){const r=focused.getBoundingClientRect();if(r.bottom>innerHeight||r.top<0)focused.scrollIntoView({block:'nearest'});}}
+}
+app.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b||b.disabled)return;
+ const d=b.dataset;
+ if('reset' in d){load(0);render('#task');return;}
+ if('replay' in d&&s.stage==='end'){load(+d.replay,s.records,true);render('#task');return;}
+ if('back' in d){rewind(+d.back);return;}
+ if('showChoices' in d){
+  const sel=s.stage==='chat'?'[data-proposal]':s.stage==='quiz'?'[data-quiz]':'#feedback';
+  const el=app.querySelector(sel);if(el){el.focus({preventScroll:true});el.scrollIntoView({block:'nearest'});}
+  return;
+ }
+ if(s.stage==='chat'){
+  if('proposal' in d){const item=proposals()[+d.proposal];if(item)send(...item);return;}
+ }
+ if('quiz' in d&&s.stage==='quiz'){s.pick=+d.quiz;s.stage='review';render('#feedback');return;}
+ if('next' in d&&s.stage==='review'){
+  s.records[s.i]=s.pick===caseNow().ok;
+  if(s.replay||s.i===cases.length-1){s.stage='end';render('#task');}
+  else{load(s.i+1,s.records);render('#task');}
+ }
+});
+load(0);render();
+})();
+</script></body></html>

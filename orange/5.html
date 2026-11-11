@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Môj telefón, môj kanál · Laboratórium odporúčaní</title>
+<style>
+:root{--bg:#101523;--surface:#191f31;--surface2:#222b42;--line:#3f4c69;--ink:#f7f8ff;--muted:#c0c9de;--mint:#b9f6c8;--violet:#d1baff;--warm:#ffdca4;--focus:#ffe98a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 78% 0,#33345f 0%,transparent 45%),radial-gradient(ellipse at 0 20%,#173c43 0%,transparent 37%),var(--bg);color:var(--ink);font:16px/1.46 system-ui,Segoe UI,sans-serif}h1,h2,h3,p{margin:0}button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible,[tabindex="-1"]:focus-visible,summary:focus-visible{outline:3px solid var(--focus);outline-offset:4px}button:disabled{cursor:default}h1{font-size:clamp(2.15rem,5.8vw,4.2rem);letter-spacing:-.065em;line-height:1.03}h1 span{color:var(--mint)}h2{font-size:clamp(1.28rem,2.7vw,2rem);line-height:1.13;letter-spacing:-.034em}.shell{width:min(1120px,calc(100% - 36px));margin-inline:auto}.mast{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:10px 0;border-bottom:1px solid #7f95bd61;font-size:.8rem}.brand,.eyebrow,.hint-tag{font-size:.72rem;letter-spacing:.095em;font-weight:850;text-transform:uppercase}.brand{background:var(--mint);color:#102c21;padding:5px 8px;border-radius:6px}.mast>span:last-child{color:var(--muted);text-align:right}.hero{padding:17px 0 12px}.hero p{margin-top:6px;color:var(--muted)}.progress{display:grid;grid-template-columns:repeat(5,1fr);list-style:none;margin:0 0 11px;padding:0;gap:6px}.progress li{min-width:0;padding:6px 9px;display:flex;align-items:center;gap:6px;background:#1a2339;border:1px solid var(--line);border-radius:9px;color:var(--muted);font-size:.76rem;font-weight:770}.progress li[aria-current]{background:#314647;color:var(--mint);border-color:#a2d3ad}.progress .done{color:#d8f5df}.num{display:grid;place-items:center;flex:none;width:21px;height:21px;border-radius:50%;background:#333f5a;color:var(--ink);font-size:.69rem}.progress [aria-current] .num{background:var(--mint);color:#142e22}.layout{display:grid;grid-template-columns:minmax(280px,.9fr) minmax(0,1.1fr);gap:14px;align-items:start}.lab,.evidence,.finish{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 25px #060a181f}.lab{padding:14px;border-top:3px solid #8ecba6}.lab .eyebrow,.evidence .eyebrow{color:var(--mint);margin-bottom:5px}.lab .lead{margin:7px 0 9px;color:var(--muted);font-size:.93rem}.kind{display:inline-block;color:#e7d8ff;font-size:.72rem;font-weight:780;background:#382c58;border-radius:7px;padding:3px 7px;margin-bottom:6px}.answers{display:grid;gap:5px}.answer,.primary,.ghost,.tab{min-height:42px;border-radius:9px;padding:7px 10px;font-weight:780}.answer{text-align:left;background:#252d43;border:1px solid #515e7f;font-size:.86rem}.answer:not(:disabled):hover,.ghost:hover,.tab:hover{background:#35405d}.answer.guess{border-color:#bc9af0;background:#3b2c56}.answer.correct{border-color:#91cba0;background:#214439}.answer.wrong{border-color:#eea99f;background:#4d2c3d}.answer:disabled:not(.correct):not(.wrong){color:#d0d7e9}.primary{background:var(--mint);border:1px solid var(--mint);color:#142e22}.primary:hover{background:#d9ffe1}.ghost,.tab{background:#252e44;border:1px solid #53617c}.lab .primary,.lab .ghost{margin-top:8px;width:100%}.feedback,.task-note{margin-top:8px;padding:8px 10px;border-radius:8px;background:#293650;color:#eef3ff;border-left:3px solid var(--violet);font-size:.87rem}.task-note{background:#253844;border-color:#8edab1}.phone{border:1px solid #657087;border-radius:20px;padding:5px;background:linear-gradient(130deg,#55637f,#202739 25%,#121723 75%,#536077);box-shadow:0 11px 30px #070b16a3}.screen{border-radius:15px;overflow:hidden;background:#151c2e}.phonehead{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:6px 9px;background:#202944;border-bottom:1px solid #475574}.phonehead b{font-size:.86rem}.lens{height:6px;width:30px;background:#090f19;border:1px solid #52627e;border-radius:10px}.phonehead small{font-size:.69rem;color:var(--muted)}.feedtop{padding:6px 7px 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:3px;color:var(--muted);font-size:.7rem}.tabs{display:flex;gap:4px}.tab{min-height:30px;padding:4px 6px;font-size:.69rem}.tab[aria-pressed=true]{color:var(--mint);border-color:#9dd5ad;background:#28423b}.feed{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;list-style:none;margin:0;padding:6px 7px 8px}.feed li{min-width:0;display:flex}.post{padding:0;border:1px solid #485775;border-radius:8px;overflow:hidden;width:100%;min-width:0;display:flex;flex-direction:column;background:#273149;color:var(--ink);text-align:left;position:relative}.post[data-pick]{border-color:var(--mint);box-shadow:0 0 0 1px #b9f6c84a inset}.post[data-pick]:hover{background:#384767}.post .art{display:block;width:100%;height:clamp(40px,5.7vw,76px);flex:none}.copy{padding:4px 5px 6px;display:grid;gap:2px}.copy small{color:var(--tc);font-size:.64rem;font-weight:820;line-height:1.2}.copy b{font-size:.76rem;line-height:1.14;overflow-wrap:anywhere}.post .badge,.post .new{position:absolute;right:4px;top:4px;font-size:.57rem;border-radius:5px;color:#133221;background:var(--mint);padding:2px 4px;font-weight:840}.post .new{background:#d8c2ff;color:#302149}.evidence{padding:9px 11px;margin-top:9px}.evidence p{font-size:.76rem;color:var(--muted);margin-bottom:5px}.bars{display:grid;gap:4px}.meter{display:grid;grid-template-columns:minmax(60px,106px) minmax(65px,1fr) 47px;gap:6px;align-items:center;font-size:.71rem}.meter b{color:var(--tc);line-height:1.18}.meter strong{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.ticks{display:grid;grid-template-columns:repeat(6,1fr);gap:3px}.ticks i{height:9px;border-radius:3px;background:#3a4762}.ticks i.yes{background:var(--tc)}.ticks i.gone{background:repeating-linear-gradient(135deg,#506185 0 3px,#293752 3px 6px);outline:1px solid #607095}.ticks i.gain{outline:1px solid white;outline-offset:-1px}.foot{padding:12px 0 16px;color:var(--muted);font-size:.75rem}.foot summary{cursor:pointer;color:var(--violet);font-weight:750}.foot p{margin-top:5px}.finish{padding:17px}.finish p{margin:6px 0;color:var(--muted)}.finish ol{margin:8px 0;padding-left:20px}.finish li{padding:4px 0}.finish .primary{margin-top:8px}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}@media(max-width:685px){.shell{width:calc(100% - 20px)}.layout{grid-template-columns:1fr;gap:8px}.hero{padding:10px 0 9px}.hero p{font-size:.85rem}.progress{gap:3px;margin-bottom:7px}.progress li{gap:2px;padding:4px 3px;font-size:.64rem}.progress .num{width:16px;height:16px;font-size:.59rem}.lab{padding:9px 11px}.lab .lead{margin:5px 0 6px;font-size:.86rem}.post .art{height:clamp(37px,12vw,64px)}.evidence{margin-top:6px}.mast{padding:6px 0}.brand{font-size:.62rem}.mast>span:last-child{font-size:.67rem}.answer{min-height:42px}}@media(max-width:370px){.progress .step-label{display:none}.progress [aria-current] .step-label{display:inline}.progress li{justify-content:center}.progress{grid-template-columns:.55fr .7fr .8fr 1fr 1fr}.copy b{font-size:.68rem}}
+</style>
+</head>
+<body>
+<header class="shell mast"><span class="brand">Digitálna odolnosť · 05</span><span>Algoritmy a online bublina</span></header>
+<main class="shell">
+<header class="hero"><h1>Môj telefón, <span>môj kanál</span></h1><p>Päť malých pokusov: tipni si, vyskúšaj a nájdi dôkaz v odporúčaniach.</p></header>
+<noscript><p>Otvor súbor v prehliadači so zapnutým JavaScriptom.</p></noscript><div id="app"></div><p id="live" class="sr" role="status" aria-live="polite"></p>
+</main>
+<footer class="shell foot"><details><summary>Pre učiteľa: čo presne simulujeme?</summary><p>V každom pokuse sa ten istý telefón nastaví na východiskovú situáciu. Počty sú zvolené pre tento model, nie sú pravidlom konkrétnej sociálnej siete. Rozličné služby môžu reagovať na kliknutie, preskočenie, vyhľadávanie či spätnú väzbu odlišne. Príspevky sú fiktívne a hra nič neodosiela.</p></details></footer>
+<script>
+(()=>{
+'use strict';
+const app=document.querySelector('#app'), live=document.querySelector('#live');
+const themes={
+ sport:['Šport','#c0f49c','#124837','#70bd67','ball'],
+ game:['Hry','#ddc7ff','#402276','#9c64e9','pad'],
+ life:['Zvieratá','#ffd1ae','#713750','#f89767','fox'],
+ sky:['Vesmír','#a9e5ff','#1a2d6b','#3ca8df','planet'],
+ yes:['Za obmedzenie','#fce0a1','#764322','#e69a57','bell'],
+ no:['Proti obmedzeniu','#e7c5fc','#503374','#c369c5','phone'],
+ context:['Skúsenosť / kontext','#b5f3e4','#16535e','#50b2a9','notes']
+};
+const drawings={
+ skate:'<path d="M23 32q5 17 23 17h65q14 0 24-18" fill="none" stroke="#f0ffcc" stroke-width="6" stroke-linecap="round"/><path d="M56 51v8m46-8v8" stroke="#a9edab" stroke-width="4"/><circle cx="56" cy="63" r="5" fill="#e9fdb7"/><circle cx="102" cy="63" r="5" fill="#e9fdb7"/><path d="m37 23 11 3m10-5 17 4" stroke="#fff" stroke-opacity=".6" stroke-width="2"/>',
+ blocks:'<path d="m48 36 27-14 27 14v25L75 75 48 61Z" fill="#b98aff" stroke="#f9ecff" stroke-width="2"/><path d="m48 36 27 14 27-14M75 50v25" fill="none" stroke="#f9ecff" stroke-width="2"/><path d="m81 26 22-12 22 12v22l-22 12V36Z" fill="#e69bff" stroke="#ffe5fa" stroke-width="2"/><path d="m81 26 22 10 22-10" fill="none" stroke="#fff" stroke-width="2"/>',
+ moon:'<circle cx="81" cy="42" r="25" fill="#dddfff" stroke="#fbfbff" stroke-width="2"/><circle cx="69" cy="34" r="7" fill="#a6abd9"/><circle cx="92" cy="51" r="8" fill="#a6abd9"/><circle cx="84" cy="24" r="3" fill="#a6abd9"/><path d="M108 34q-6 26-35 32 27 6 35-18Z" fill="#a6abd9" opacity=".6"/>',
+ ball:'<path d="M12 41h31M19 51h20m-8-21h12" stroke="#d2ffb6" stroke-width="3" stroke-linecap="round"/><circle cx="81" cy="42" r="25" fill="#ecffd8" stroke="#fff" stroke-width="2"/><path d="m81 31 11 8-4 13H74l-4-13Zm0 0V17m11 22 13-4m-17 17 7 12m-21-12-7 12m3-25-12-4" fill="#21664d" stroke="#21664d" stroke-width="2"/>',
+ pad:'<path d="M50 27h55q10 1 14 12l6 18c4 13-7 19-15 11L97 57H58L46 68c-8 8-19 2-15-11l6-18q4-11 13-12Z" fill="#f4e0ff" stroke="#fff" stroke-width="2"/><path d="M55 35v15m-7-7h14" stroke="#572b94" stroke-width="4" stroke-linecap="round"/><circle cx="101" cy="39" r="3" fill="#ec668f"/><circle cx="110" cy="46" r="3" fill="#8041ca"/>',
+ fox:'<path d="m48 48-2-26 22 12h22l22-12-2 26-14 15-17 9-17-9Z" fill="#ffaf78" stroke="#ffdeb3" stroke-width="2"/><path d="m48 48 20-3 11 27 11-27 20 3-14 15-17 9-17-9Z" fill="#fff0dc"/><path d="m53 31 1 12 9-7m42-5-1 12-9-7" fill="#9b4b5d"/><path d="m62 48 7-1m20 0 7 1m-20 10h6" stroke="#582941" stroke-width="3" stroke-linecap="round"/>',
+ planet:'<circle cx="82" cy="41" r="24" fill="#a9baff" stroke="#ebedff" stroke-width="2"/><path d="M62 38q16-14 42-3-14 1-24 9-10 5-20 2" fill="#647ce5"/><ellipse cx="82" cy="43" rx="39" ry="9" transform="rotate(-18 82 43)" fill="none" stroke="#d4ffff" stroke-width="4"/><path d="M30 20v12m-6-6h12m89 28v10m-5-5h10" stroke="#ebfcff" stroke-width="2"/>',
+ bell:'<path d="M81 20c-13 0-21 9-21 21 0 8-3 12-7 17h56c-4-5-7-9-7-17 0-12-8-21-21-21Z" fill="#ffdf94" stroke="#fff3cf" stroke-width="2"/><path d="M74 62q7 11 14 0m-7-48v7" fill="none" stroke="#fff0bc" stroke-width="3" stroke-linecap="round"/><path d="m67 52 27-25" stroke="#a4443b" stroke-width="4" stroke-linecap="round"/>',
+ phone:'<rect x="66" y="15" width="32" height="55" rx="6" fill="#f5daff" stroke="#fff" stroke-width="2"/><rect x="70" y="22" width="24" height="38" rx="2" fill="#8751af"/><path d="m75 42 5 5 10-13" fill="none" stroke="#e7ffe7" stroke-width="3" stroke-linecap="round"/><path d="M80 65h4" stroke="#5b326b" stroke-width="2" stroke-linecap="round"/>',
+ notes:'<path d="M54 24h55v34H79L66 68V58H54Z" fill="#cbfff1" stroke="#fff" stroke-width="2"/><path d="M65 34h31m-31 7h25m-25 7h15" stroke="#347d80" stroke-width="2.8" stroke-linecap="round"/>'
+};
+const titles={
+ sport:['Trik so skejtom','Gól od žrde','Rozhodla sekunda','Skok cez lavičku','Beh do kopca','Lopta na čiare'],
+ game:['Boss bez zásahu','Mesto z kociek','Tajný level','Mapa na speedrun','Turnaj v aréne','Výzva: jeden život'],
+ life:['Líška po zotmení','Vydra na ľade','Stopy v blate','Sova bez hluku','Rys v lese','Žaby po daždi'],
+ sky:['Tiene na Mesiaci','Let na Mars','Prstence Saturnu','Polárna žiara','Prelet kométy','Noc s ďalekohľadom'],
+ yes:['Bez mobilov sa ľahšie sústredím','Cez prestávku sa viac rozprávame','Upozornenia nás pri učení rušia','Chcem prestávky bez obrazoviek'],
+ no:['Mobil pomáha pri skupinovej práci','Mobil sa dá využiť pri učení','Potrebujeme výnimky podľa situácie','Mobil ako pomôcka na hodine'],
+ context:['Ako sa pravidlá líšia medzi školami','Čo hovorí náš školský poriadok','Kedy používame mobil na hodine','Anketa v našej triede']
+};
+const q=(title,options,ok,why,observed=false,reflection=false)=>({kind:'q',title,options,ok,why,observed,reflection});
+const a=(title,text,label,event,after)=>({kind:'a',title,text,label,event,after});
+const pick=(title,text,topic,after)=>({kind:'pick',title,text,topic,after});
+const missions=[
+ {short:'Kliknutia',name:'Čo spraví jedno kliknutie?',base:{sport:2,game:2,life:2},lesson:'Opakované otvorenia môžu zvýšiť podiel jednej témy.',steps:[
+ q('Tip: čo sa stane po otvorení športového príspevku?',['Športu v kanáli pribudne.','Športu v kanáli ubudne.','Pomer tém zostane rovnaký.'],0,'Over si tip. Pod telefónom je východiskový stav: 2 zo 6 príspevkov sú o športe.'),
+ pick('Otvor športový príspevok','Vyber jednu zo zvýraznených kariet s označením Šport. Potom sleduj počítadlo pod telefónom.','sport',{sport:3,game:2,life:1}),
+ pick('Otvor ešte jeden športový príspevok','Šport je teraz v troch kartách. Zisti, čo urobí druhé otvorenie rovnakej témy.','sport',{sport:4,game:1,life:1}),
+ q('Ktorý zápis ukazuje, čo sa stalo so športom?',['2 → 3 → 4 príspevky zo 6','2 → 4 → 3 príspevky zo 6','3 → 3 → 4 príspevky zo 6'],0,'Šport zabral po každom otvorení o jedno miesto viac. Kanál má stále šesť miest, takže pre iné témy zostalo menej miesta.',true),
+ q('Klikol si zo zvedavosti. Čo z tvojho kliknutia môže aplikácia vyčítať?',['Že si príspevok otvoril, ale dôvod nemusí poznať.','Že šport máš určite radšej ako všetko ostatné.','Že si všetky športové príspevky dopozeral.'],0,'Klik je stopa, nie vysvetlenie. Aj preto sa odporúčania nemusia vždy trafiť do toho, čo chceš vidieť.',true,true)
+ ]},
+ {short:'Signály',name:'Preskočiť alebo povedať „menej“?',base:{sport:4,game:1,life:1},lesson:'Preskočenie a výslovná spätná väzba sú dva rôzne signály.',steps:[
+ q('Tip: čo je jasnejší signál „chcem menej športu“?',['Preskočím jeden príspevok.','Zvolím „Menej takýchto“.','Obe akcie hovoria presne to isté.'],1,'Vyskúšaj obe možnosti a porovnaj počet športových kariet.'),
+ a('Preskoč športový príspevok','Tlačidlo nasimuluje, že si príspevok prešiel bez otvorenia.','Preskočiť šport','Preskočenie',{sport:4,game:1,life:1}),
+ a('Daj aplikácii jasný signál','Po preskočení zostali 4 športové karty. Teraz použi voľbu, ktorá priamo hovorí, že chceš menej podobných príspevkov.','Menej takýchto: Šport','Menej takýchto',{sport:2,game:2,life:2}),
+ q('Ktorá akcia v pokuse zmenila pomer tém?',['Obe akcie znížili počet športových kariet.','Preskočenie znížilo počet; „Menej takýchto“ ho vrátilo späť.','Preskočenie ho nezmenilo; „Menej takýchto“ znížilo šport zo 4 na 2.'],2,'V našej simulácii jedno preskočenie pomer nezmenilo. Výslovná spätná väzba znížila počet športových kariet o dve.',true)
+ ]},
+ {short:'Hľadanie',name:'Ako sa do kanála dostane nová téma?',base:{sport:3,game:2,life:1},lesson:'Výsledky vyhľadávania a odporúčania nie sú to isté.',steps:[
+ q('Tip: čo uvidíš hneď po vyhľadaní slova „vesmír“?',['Kanál automaticky prepíše všetky staré odporúčania.','Výsledky vyhľadávania k zadanej téme.','Iba tie isté športové karty ako predtým.'],1,'Vyskúšaj vyhľadávanie. Sleduj rozdiel medzi výsledkami a kanálom Pre teba.'),
+ {kind:'search',title:'Vyhľadaj tému, ktorá v kanáli chýba',text:'Vesmír má v odporúčaniach nula miest. Skús ho vyhľadať priamo.',label:'Vyhľadať „vesmír“',event:'Vyhľadanie',after:{sport:3,game:2,life:1}},
+ pick('Otvor výsledok o vesmíre','Teraz vidíš výsledky vyhľadávania. Pod telefónom je stále počet tém v odporúčaniach. Otvor jeden výsledok a pozri sa, čo sa zmení po návrate do kanála.','sky',{sport:2,game:2,life:1,sky:1}),
+ q('Kedy pribudol vesmír do kanála Pre teba?',['Hneď po vyhľadaní.','Až po otvorení výsledku.','V tomto pokuse sa do odporúčaní nedostal.'],1,'Pri vyhľadaní sa ukázali zodpovedajúce výsledky. Odporúčania sa v tomto modeli zmenili až po otvorení jedného z nich.',true)
+ ]},
+ {short:'Pohľady',name:'Jedna téma môže mať viac pohľadov',base:{yes:4,context:2},lesson:'Online bublina môže skrývať iné názory aj v rámci jednej témy.',steps:[
+ q('Tip: čo môže chýbať aj v kanáli plnom príspevkov o mobiloch v škole?',['Iný názor na používanie mobilov.','Každý príspevok o mobiloch.','Nič, lebo všetky príspevky majú spoločnú tému.'],0,'Pod telefónom vidíš aj pohľady: v štartovom kanáli sú príspevky za obmedzenie a dva s kontextom.'),
+ a('Pozri si aj iný pohľad','Všetky karty sú stále o mobiloch v škole. Daj priestor aj príspevkom, ktoré s obmedzením nesúhlasia.','Pridať aj iný pohľad','Iný pohľad',{yes:2,no:2,context:2}),
+ q('Čo sa v pokuse zmenilo?',['Pribudla ďalšia téma: používanie mobilov doma.','Zmenili sa názory, ktoré kanál ukazuje; téma zostala rovnaká.','Počet príspevkov stúpol zo šiestich na osem.'],1,'Pribudli dva príspevky proti obmedzeniu. Stále ide o mobily v škole a počet kariet sa nezmenil. Viac pohľadov samo osebe nezaručuje pravdivosť, preto sa oplatí overovať zdroje.',true),
+ q('Štyri príspevky podporovali obmedzenie mobilov. Čo z toho ešte nevieš?',['Koľko kariet si videl v tomto kanáli.','Aký názor v kanáli prevažoval.','Či rovnaký názor zastáva aj väčšina tvojej triedy.'],2,'Odporúčaný kanál je vybraný obsah. Z pomeru príspevkov v ňom nezistíš výsledok ankety medzi spolužiakmi.',true,true)
+ ]},
+ {short:'Výzva',name:'Zmeň si kanál podľa vlastného cieľa',base:{game:4,sport:1,life:1},lesson:'Najprv si pomenuj cieľ, potom zmenu over v kanáli.',steps:[
+ q('Cieľ: menej hier a aspoň jeden príspevok o vesmíre. Ktorý plán skúsiš?',['Otvoriť dve hry a čakať na vesmír.','Dať „Menej hier“, vyhľadať vesmír a otvoriť výsledok.','Preskočiť šport a už nič neurobiť.'],1,'Cieľ má dve časti: uvoľniť miesto a dať aplikácii nový signál záujmu. Vyskúšaj ich postupne.'),
+ a('Uvoľni v kanáli miesto','Zníž počet herných príspevkov, aby mali viac priestoru aj iné témy.','Menej takýchto: Hry','Menej hier',{game:2,sport:2,life:2}),
+ {kind:'search',title:'Vyhľadaj chýbajúcu tému',text:'Hry už zaberajú menej miesta. Teraz si vyhľadaj vesmír.',label:'Vyhľadať „vesmír“',event:'Vyhľadanie',after:{game:2,sport:2,life:2}},
+ pick('Otvor výsledok a skontroluj cieľ','Otvor jeden príspevok o vesmíre. Vrátiš sa do kanála a budeš môcť porovnať pôvodné a nové odporúčania.','sky',{game:2,sport:2,life:1,sky:1}),
+ q('Ktorý dôkaz ukazuje, že sa podarili obe časti cieľa?',['Hry: 4 → 2 a Vesmír: 0 → 1.','Šport: 1 → 2 a počet kariet je stále 6.','Vesmír: 0 → 1; počet hier nevieme.'],0,'Pomer hier klesol zo štyroch na dva a objavila sa jedna vesmírna karta. Sú to dve zmeny v tom istom kanáli.',true)
+ ]}
+];
+let s;
+function reset(){s={m:0,i:0,answer:null,view:'now',search:false,history:[],results:[],done:false,tried:false,used:{},current:{...missions[0].base}}}
+function mission(){return missions[s.m]}
+function step(){return mission().steps[s.i]}
+function announce(t){live.textContent=t}
+function note(t){return '<p class="task-note">'+t+'</p>'}
+function topicArt(t,n){
+ const [,,dark,light,baseIcon]=themes[t],key=t==='sport'&&n===0?'skate':t==='game'&&n===1?'blocks':t==='sky'&&n===0?'moon':baseIcon, id='art-'+t+'-'+n;
+ return '<svg class="art" aria-hidden="true" viewBox="0 0 160 84" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="'+id+'" x2="100%" y2="100%"><stop stop-color="'+dark+'"/><stop offset="1" stop-color="'+light+'"/></linearGradient></defs><rect width="160" height="84" fill="url(#'+id+')"/><circle cx="'+(n%2?111:49)+'" cy="38" r="33" fill="#fff" opacity=".14"/><path d="M0 74 160 13M0 84 160 23" stroke="#fff" opacity=".16"/><g transform="translate('+(n%3-1)*4+' 0)">'+drawings[key]+'</g><path d="M12 13v9m-4.5-4.5h9m131 49v9m-4.5-4.5h9" stroke="#fff" stroke-opacity=".8" stroke-width="1.6"/></svg>';
+}
+function slots(counts,original){
+ const groups=Object.entries(counts).map(([t,size])=>{
+  const excluded=original?[]:(s.used[t]||[]);
+  return {t,nums:titles[t].map((_,n)=>n).filter(n=>!excluded.includes(n)).slice(0,size)};
+ });
+ return Array.from({length:6},(_,i)=>groups.flatMap(({t,nums})=>nums[i]===undefined?[]:[{t,n:nums[i]}])).flat();
+}
+function phone(){
+ const st=step(), baseline=s.view==='before'&&!s.search, list=s.search?[0,1,2].map(n=>({t:'sky',n})):slots(baseline?mission().base:s.current,baseline);
+ const active=st.kind==='pick'&&!baseline, changed=s.history.length&&!s.search;
+ const cards=list.map(({t,n})=>{
+  const [name,col]=themes[t], open=active&&st.topic===t, fresh=!baseline&&!s.search&&!(mission().base[t]||0);
+  const content=topicArt(t,n)+(open?'<span class="badge">Otvoriť</span>':fresh?'<span class="new">Pribudlo</span>':'')+'<span class="copy" style="--tc:'+col+'"><small>'+name+'</small><b>'+titles[t][n]+'</b></span>';
+  return '<li>'+(open?'<button type="button" class="post" data-pick="'+t+'" data-card="'+n+'">'+content+'</button>':'<div class="post">'+content+'</div>')+'</li>';
+ }).join('');
+ const controls=changed?'<div class="tabs" role="group" aria-label="Zobrazenie kanála">'+[['now','Teraz'],['before','Pred pokusom']].map(([id,t])=>'<button type="button" class="tab" data-view="'+id+'" aria-pressed="'+(s.view===id)+'">'+t+'</button>').join('')+'</div>':'';
+ return '<section class="phone" aria-label="Jeden simulovaný telefón"><div class="screen"><div class="phonehead"><b>'+(s.search?'Hľadať':'Pre teba')+'</b><span class="lens" aria-hidden="true"></span><small>Simulácia</small></div><div class="feedtop"><span>'+(s.search?'Výsledky pre „vesmír“':s.m===3?'Téma: mobily v škole':baseline?'Pôvodné odporúčania':'Odporúčané príspevky')+'</span>'+controls+'</div><ul class="feed">'+cards+'</ul></div></section>';
+}
+function evidence(){
+ const prev=mission().base, cur=s.current, keys=Object.keys({...prev,...cur,...((s.m===2||s.m===4)?{sky:0}:s.m===3?{no:0}:{})});
+ return '<section class="evidence" aria-labelledby="evidence-title"><h3 id="evidence-title" class="eyebrow">Dôkaz: '+(s.m===3?'pohľady':'témy')+' v kanáli Pre teba</h3><p>'+(s.history.length?'Počet kariet zo 6: pred pokusom → teraz.':'Na začiatku: počet kariet zo 6.')+(s.search?' Výsledky hľadania sa sem nepočítajú.':'')+'</p><div class="bars">'+keys.map(t=>{
+  const x=prev[t]||0,y=cur[t]||0,[name,col]=themes[t];
+  return '<div class="meter" style="--tc:'+col+'"><b>'+name+'</b><div class="ticks" aria-hidden="true">'+Array.from({length:6},(_,i)=>'<i class="'+(i<y?(i>=x?'yes gain':'yes'):i<x?'gone':'')+'"></i>').join('')+'</div><strong>'+(s.history.length?x+' → ':'')+y+'</strong></div>';
+ }).join('')+'</div>'+(s.history.length?'<p style="margin:6px 0 0">Priebeh: '+s.history.map(e=>e.label+' ('+e.theme+' '+e.count+')').join(' · ')+'</p>':'')+'</section>';
+}
+function guide(){
+ const st=step(), answered=s.answer!==null;
+ let body='';
+ if(st.kind==='q'){
+  body='<p class="lead">'+(st.reflection?'Využi, čo si si práve všimol v pokuse.':st.observed?'Odpoveď nájdi v paneli Dôkaz pod telefónom.':(s.m?'Ten istý telefón má pre tento pokus pripravený nový východiskový stav. ':'')+'Tip si potom overíš. Tipy sa nebodujú.')+'</p><div class="answers">'+st.options.map((t,i)=>'<button type="button" class="answer '+(answered&&st.observed?(i===st.ok?'correct':i===s.answer?'wrong':''):answered&&i===s.answer?'guess':'')+'" data-answer="'+i+'" '+(answered?'disabled':'')+'>'+t+(answered&&st.observed?(i===st.ok?' ✓':i===s.answer?' ×':''):'')+'</button>').join('')+'</div>';
+  if(answered)body+='<p id="feedback" class="feedback" tabindex="-1"><strong>'+(st.observed?(s.answer===st.ok?'Správne. ':'Pozri na zelenú odpoveď. '):'Tip zapísaný. ')+'</strong>'+st.why+'</p><button type="button" class="primary" data-next>'+(s.i===mission().steps.length-1?(s.m===missions.length-1?'Zobraziť výsledok':'Ďalší pokus'):st.observed?'Ďalšia otázka':'Vyskúšať v kanáli')+' →</button>';
+ }else{
+  body='<p class="lead">'+st.text+'</p>';
+  if(st.kind==='pick'){
+   body+=note(s.view==='before'&&!s.search?'Pozeráš pôvodný kanál. Ak chceš otvoriť kartu, prepni telefón na „Teraz“.':'Hľadaj kartu označenú „Otvoriť“.');
+  }else{
+   body+='<button type="button" class="primary" data-action>'+st.label+' →</button>';
+   if(s.m===4&&s.i===1)body+=s.tried?'<p class="feedback" id="trial-feedback" tabindex="-1">Otvorením ďalšej hry pribudla jedna herná karta. Porovnaj počty a skús druhú možnosť.</p>':'<button type="button" class="ghost" data-try>Skúsiť otvoriť ďalšiu hru</button>';
+  }
+ }
+ return '<section class="lab" aria-labelledby="task"><p class="eyebrow">Pokus '+(s.m+1)+' / '+missions.length+' · '+mission().name+'</p><span class="kind">'+(st.kind==='q'?(st.reflection?'3 · Premýšľaj':st.observed?'3 · Nájdi dôkaz':'1 · Tipni si'):'2 · Vyskúšaj')+'</span><h2 id="task" tabindex="-1">'+st.title+'</h2>'+body+'</section>';
+}
+function finish(){
+ const score=s.results.filter(Boolean).length,total=missions.flatMap(m=>m.steps).filter(x=>x.observed).length;
+ return '<section class="finish"><p class="eyebrow">Laboratórium dokončené</p><h2 id="task" tabindex="-1">Tvoje výsledky: '+score+' z '+total+' správne</h2><p>Odporúčací algoritmus je pravidlo, podľa ktorého aplikácia vyberá, čo ti ukáže. Keď sa opakuje podobný obsah a k iným témam či názorom sa dostávaš menej často, môže vzniknúť online bublina.</p><ol>'+missions.map((m,i)=>'<li><strong>'+m.short+':</strong> '+m.lesson+'</li>').join('')+'</ol><p><strong>Na rozhovor:</strong> Ktorý pokus by sa ti zišiel pri používaní vlastného telefónu a prečo?</p><button type="button" class="primary" data-reset>Skúsiť odznova ↻</button></section>';
+}
+function render(focus){
+ const nav='<ol class="progress" aria-label="Postup v pokusoch">'+missions.map((m,i)=>'<li '+(i===s.m&&!s.done?'aria-current="step"':i<s.m||s.done?'class="done"':'')+'><span class="num">'+(i<s.m||s.done?'✓':i+1)+'</span><span class="step-label">'+m.short+'</span></li>').join('')+'</ol>';
+ app.innerHTML=nav+(s.done?finish():'<div class="layout">'+guide()+'<div>'+phone()+evidence()+'</div></div>');
+ if(focus)app.querySelector(focus)?.focus();
+}
+function advance(){
+ s.i++;s.answer=null;s.view='now';
+ if(s.i>=mission().steps.length){
+  if(s.m===missions.length-1){s.done=true}
+  else{s.m++;s.i=0;s.current={...mission().base};s.history=[];s.search=false;s.used={};s.tried=false;announce('Nový pokus: telefón je nastavený na nový východiskový stav.')}
+ }
+ render('#task');
+}
+function apply(st,card){
+ const before=s.current, label=st.event||'Otvorenie: „'+titles[st.topic][card]+'“';
+ if(st.topic)(s.used[st.topic]??=[]).push(card);
+ s.current={...st.after};
+ const tracked=st.topic||(s.m===1?'sport':s.m===3?'no':s.m===4&&st.kind!=='search'?'game':'sky');
+ const count=(before[tracked]||0)+' → '+(s.current[tracked]||0);
+ s.history.push({label,count,theme:themes[tracked][0]});
+ s.search=st.kind==='search';
+ announce(label+': '+themes[tracked][0]+' '+count+'.');
+ advance();
+}
+app.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b||b.disabled)return;
+ const d=b.dataset;
+ if('reset' in d){reset();render('#task');return}
+ if(s.done)return;
+ const st=step();
+ if('view' in d&&!s.search){s.view=d.view;render('[data-view="'+s.view+'"]');return}
+ if('answer' in d&&st.kind==='q'&&s.answer===null){
+  s.answer=+d.answer;
+  if(st.observed)s.results.push(s.answer===st.ok);
+  render('#feedback');return;
+ }
+ if('next' in d&&st.kind==='q'&&s.answer!==null){advance();return}
+ if('action' in d&&(st.kind==='a'||st.kind==='search')){apply(st);return}
+ if(d.pick&&st.kind==='pick'&&d.pick===st.topic&&s.view==='now'){
+  const shown=s.search?[0,1,2].map(n=>({t:'sky',n})):slots(s.current,false);
+  const card=+d.card;
+  if(shown.some(p=>p.t===d.pick&&p.n===card))apply(st,card);
+ }
+ if('try' in d&&s.m===4&&s.i===1&&!s.tried){
+  s.tried=true;s.view='now';
+  s.current={game:5,sport:1,life:0};
+  s.history.push({label:'Otvorenie ďalšej hry',theme:'Hry',count:'4 → 5'});
+  announce('Hry zaberajú 5 zo 6 miest. Skús iný ťah.');
+  render('#trial-feedback');
+ }
+});
+reset();render();
+})();
+</script></body></html>
