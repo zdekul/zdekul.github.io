@@ -1,0 +1,152 @@
+<!doctype html><html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>Mapa pomoci · Kyberšikana</title>
+<style>
+:root{--bg:#101725;--panel:#192234;--edge:#435473;--text:#f6f7ff;--soft:#c3cce0;--lime:#d6fc95;--ice:#a5e7f2;--rose:#ffc7bb}*{box-sizing:border-box}body{margin:0;color:var(--text);background:radial-gradient(ellipse at 90% 0,#373355 0,transparent 40%),radial-gradient(ellipse at 3% 24%,#1d4245 0,transparent 38%),var(--bg);font:16px/1.44 system-ui,Segoe UI,sans-serif}button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}button:disabled{cursor:default}button:focus-visible,[tabindex="-1"]:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid #fff0a0;outline-offset:3px}h1,h2,h3,p{margin:0}.wrap{width:min(1100px,calc(100% - 30px));margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #8594af50;color:var(--soft);font-size:.78rem}.brand,.eyebrow{font-size:.71rem;font-weight:850;letter-spacing:.085em;text-transform:uppercase}.brand{background:var(--lime);color:#1b2e15;padding:4px 7px;border-radius:6px;white-space:nowrap}.hero{padding:15px 0 10px}.hero h1{font-size:clamp(2.5rem,7vw,4.65rem);letter-spacing:-.065em;line-height:.98}.hero h1 span{color:var(--lime)}.hero p{margin-top:7px;color:var(--soft);font-size:.92rem}.progress{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));list-style:none;gap:5px;padding:0;margin:0 0 9px}.progress li{border:1px solid var(--edge);border-radius:8px;background:#212a41;color:var(--soft);font-size:.72rem;padding:5px 6px;font-weight:750}.progress [aria-current]{background:#3e5143;border-color:#a8cd8c;color:#edffdc}.progress .done{color:var(--lime)}.case,.work,.map,.summary{border:1px solid var(--edge);background:var(--panel);border-radius:14px}.case{display:flex;align-items:center;gap:11px;padding:9px 11px;margin-bottom:9px}.case-icon{display:grid;place-items:center;width:47px;height:47px;flex:none;border-radius:12px;background:#394862;color:var(--ice)}.case-icon svg{width:27px;height:27px}.case h2,.summary h2{font-size:clamp(1.25rem,3vw,1.78rem);line-height:1.1;letter-spacing:-.03em}.case p{margin-top:4px;color:var(--soft);font-size:.88rem}.layout{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr);gap:9px;align-items:start}.work,.summary{padding:11px}.eyebrow{color:var(--ice);margin-bottom:4px}.work h3{line-height:1.14;font-size:1.12rem}.help{margin:5px 0 7px;color:var(--soft);font-size:.81rem}.opts{display:grid;gap:5px}.btn,.option{min-height:42px;padding:6px 9px;border:1px solid #7282a1;background:#2a364e;border-radius:8px;font-weight:750;font-size:.84rem}.btn:hover:not(:disabled),.option:hover:not(:disabled){background:#3b4d68}.btn.primary{background:var(--lime);border-color:var(--lime);color:#203119}.btn.primary:hover{background:#edffce}.option{text-align:left;display:flex;gap:6px;align-items:center}.option[aria-pressed=true]{border-color:var(--lime);box-shadow:0 0 0 1px var(--lime) inset;background:#3c4d40;color:#f3ffdc}.option.quiz-right{border-color:#a6d699;background:#344b40}.option.quiz-wrong{border-color:#e3aaad;background:#4c374a}.opt-num{flex:none;display:grid;place-items:center;background:#435571;border-radius:6px;width:21px;height:21px;font-size:.7rem;color:white}.out{margin:7px 0 0;padding:7px 9px;border-radius:8px;background:#25364d;border-left:3px solid var(--ice);font-size:.83rem}.out.yes{background:#31483d;border-color:var(--lime)}.out.no{background:#463146;border-color:var(--rose)}.out strong{display:block}.buttons{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}.map{padding:9px;background:radial-gradient(circle,#789db244 1px,transparent 1px) 0 0/16px 16px,#192839;overflow:hidden}.map-top{display:flex;align-items:center;justify-content:space-between;gap:4px;flex-wrap:wrap;margin:0 0 4px}.map-top h3{font-size:.95rem}.map-top span{color:var(--ice);font-size:.72rem;font-weight:780}.stations{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,minmax(59px,auto));gap:4px;align-items:center;justify-items:center;padding:5px 0}.tracks{z-index:-1;position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.place{--color:#a6e4ef;width:min(142px,100%);min-width:0;min-height:54px;border:1px solid #889fbe;border-radius:9px;background:#293c54;padding:4px 3px;display:grid;justify-items:center;gap:2px;text-align:center;box-shadow:0 3px 8px #050c1670}.place svg{width:23px;height:23px;color:var(--color)}.place b{font-size:.72rem;line-height:1.12}.place small{font-size:.61rem;color:#d6e0ee;line-height:1.1}.place[data-person="me"]{grid-area:2/2;--color:#d6fc95}.place[data-person="friend"]{grid-area:1/2;--color:#ffc5e2}.place[data-person="school"]{grid-area:2/1;--color:#ffdd9c}.place[data-person="home"]{grid-area:2/3;--color:#dfceff}.place[data-person="admin"]{grid-area:3/2;--color:#a6e4ef}.place:not(:disabled):hover{background:#425a72;border-color:#f2faff}.place.is-ready{border-color:#a9ced7}.place.right{background:#355046;border-color:var(--lime);box-shadow:0 0 0 1px var(--lime)}.place.wrong{background:#533b4c;border-color:var(--rose)}.map-note{color:var(--soft);font-size:.73rem;padding-top:3px}.summary{max-width:710px}.summary h2{margin-bottom:6px}.summary p,.summary li{font-size:.89rem}.summary ul{padding-left:20px}.summary li{margin:4px 0}.foot{padding:10px 0 16px;font-size:.75rem;color:var(--soft)}.foot summary{cursor:pointer}.foot a{color:var(--ice)}.foot p{margin-top:4px}.sr{position:absolute;clip-path:inset(50%);height:1px;width:1px;overflow:hidden;white-space:nowrap}
+@media(max-width:675px){.wrap{width:calc(100% - 16px)}.layout{grid-template-columns:1fr}.hero{padding:9px 0 8px}.hero p{font-size:.81rem}.case{padding:7px}.case-icon{width:35px;height:35px}.case p{font-size:.81rem}.progress li{font-size:.64rem;padding:4px}.map{padding:7px}.stations{grid-template-rows:repeat(3,minmax(55px,auto))}.place{min-height:50px}.place b{font-size:.68rem}.place small{font-size:.58rem}}@media(max-width:370px){.progress .long{display:none}.progress [aria-current] .long{display:inline}.progress li{text-align:center}}
+</style></head>
+<body><header class="wrap top"><span class="brand">Digitálna odolnosť · 07</span><span>Kyberšikana a pomoc</span></header>
+<main class="wrap"><header class="hero"><h1>Mapa <span>pomoci</span></h1><p>Najprv vyber krok. Potom na mape klikni na toho, kto ho môže urobiť.</p></header><noscript><p>Otvor súbor v prehliadači so zapnutým JavaScriptom.</p></noscript><div id="app"></div><p id="live" class="sr" role="status"></p></main>
+<footer class="wrap foot"><details><summary>Pre učiteľa · zdroj a vysvetlenie</summary><p>Príbehy sú vymyslené. Mapa ukazuje možné kroky, ktoré sa dajú kombinovať. Podpora spolužiaka, pomoc dospelého a zásah v aplikácii majú rôzne úlohy.</p><p>Východisko: <a href="https://www.unicef.org/stories/how-to-stop-cyberbullying" target="_blank" rel="noopener noreferrer">UNICEF: Cyberbullying – what it is and how to stop it</a>.</p></details></footer>
+<script>
+(()=>{
+'use strict';
+const app=document.querySelector('#app'), live=document.querySelector('#live');
+const icons={
+ me:'<circle cx="12" cy="7" r="3"/><path d="M5 21v-3a7 7 0 0 1 14 0v3M8 17v4m8-4v4"/>',
+ friend:'<path d="M12 21 4 13a5 5 0 0 1 8-6 5 5 0 0 1 8 6Z"/>',
+ school:'<path d="m3 10 9-7 9 7M5 9v12h14V9M10 21v-6h4v6m-6-9h.01m8 0h.01"/>',
+ home:'<path d="m2 11 10-8 10 8m-3-2v12H5V9m4 12v-6h6v6"/>',
+ admin:'<path d="M12 22c-4-2-8-6-8-12V5l8-3 8 3v5c0 6-4 10-8 12Z"/><path d="m8 11 3 3 5-5"/>',
+ sticker:'<path d="M20 12v-7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h5c3 0 9-6 9-9Z"/><path d="M20 12h-6a2 2 0 0 0-2 2v6m-4-9h.01m6-4h.01"/>',
+ game:'<path d="M7 6h10a5 5 0 0 1 5 4l1 5c1 4-3 5-5 3l-2-2H8l-2 2c-2 2-6 1-5-3l1-5a5 5 0 0 1 5-4Z"/><path d="M5 11h6m-3-3v6m9-3h.01m3 2h.01"/>',
+ alarm:'<path d="M12 2 2 21h20Z"/><path d="M12 9v5m0 3h.01"/>',
+ repeat:'<path d="M3 10a8 8 0 0 1 14-5l3 3m0-5v5h-5m6 6a8 8 0 0 1-14 5l-3-3m0 5v-5h5"/>'
+};
+const svg=k=>'<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round">'+icons[k]+'</svg>';
+const people={
+ me:['Ja','Moje rozhodnutie'],
+ friend:['Kamarát','Môže byť pri mne'],
+ school:['Dospelý v škole','Učiteľka, školský tím'],
+ home:['Dospelý mimo školy','Rodič alebo iný blízky'],
+ admin:['Správca / platforma','Rieši obsah a účty']
+};
+const act=(label,ok,reason)=>({label,ok,reason});
+const bad=(label,reason)=>act(label,{},reason);
+const cases=[
+ {short:'Nálepka',icon:'sticker',title:'Nálepka v triednej skupine',story:'Už tretí deň niekto posiela posmešnú nálepku s Adamovou fotkou. Adam prestal v skupine písať. Ty si si to všimol.',tasks:[
+ {title:'Čo môžeš urobiť hneď ako svedok?',options:[
+ act('Napísať Adamovi súkromne, že som si to všimol a môžem ho vypočuť.',{me:'Aj krátke „Vidím, čo sa deje. Som tu, ak chceš.“ môže Adamovi ukázať, že na to nie je sám.',friend:'Aj iný spolužiak, ktorý to vidí, sa môže Adamovi ozvať a vypočuť ho.'},'Tento krok vie urobiť ten, kto si situáciu všimol – ty alebo ďalší kamarát.'),
+ bad('Poslať nálepku ostatným, aby pochopili, čo sa stalo.','Tým by ju videlo ešte viac ľudí. Pomoc si môžeš vypýtať opisom situácie bez preposlania nálepky.'),
+ act('Nahlásiť konkrétnu nálepku cez funkciu v aplikácii.',{me:'Ako svedok môžeš nahlásiť konkrétny obsah, ak to aplikácia umožňuje.',friend:'Aj ďalší svedok môže nahlásiť príspevok, ktorý vidí.'},'Správca môže nahlásenie posúdiť. Nahlásiť obsah však môžeš aj ty alebo iný svedok.')]},
+ {title:'Adam hovorí, že sa nálepka objavuje znova. Kto s čím pomôže?',options:[
+ act('Dohodnúť sa s Adamom, ako riešiť opakované ubližovanie v triede.',{school:'Učiteľka alebo školský tím môže situáciu riešiť v triede a dohodnúť s Adamom ďalší postup.'},'V tomto kroku ide o riešenie v triede. Kamarát alebo rodič môže Adama podporiť, ale školské kroky rieši dospelý v škole.'),
+ act('Posúdiť nahlásenú nálepku a podľa pravidiel ju odstrániť.',{admin:'Správca alebo platforma môže zasiahnuť tam, kde má oprávnenie. Kópie mimo skupiny tým nemusia zmiznúť.'},'O odstránení cudzieho príspevku môže rozhodnúť správca alebo platforma.'),
+ bad('Povedať Adamovi, že ak sa neozve verejne, problém sa ho netýka.','Adam nemusí vystúpiť pred skupinou, aby dostal pomoc.')]}]},
+ {short:'Hra',icon:'game',title:'Správy v hernom chate',story:'Po troch zápasoch ti jeden hráč znovu posiela posmešné súkromné správy. Spoluhráčka Mia vie, čo sa deje, ale nevie, ako pomôcť.',tasks:[
+ {title:'Ako môžeš obmedziť kontakt?',options:[
+ act('Zablokovať účet vo svojom profile, ak to hra umožňuje.',{me:'Zablokovanie vo vlastnom účte môže obmedziť kontakt. Stále sa môžeš niekomu zdôveriť.'},'Blokovanie vo vlastnom účte vieš urobiť ty; niekto ti pritom môže pomôcť.'),
+ bad('Odpovedať rovnakými urážkami, aby prestal.','Odplata môže konflikt vystupňovať. Nemusíš na správy reagovať.'),
+ act('Posúdiť nahlásený účet a prípadne zasiahnuť podľa pravidiel hry.',{admin:'Nahlásenie spracúva moderátor alebo platforma. Výsledok nemusí byť okamžitý.'},'Ty vieš podať nahlásenie. O zásahu do cudzieho účtu rozhoduje platforma.')]},
+ {title:'Ako získaš oporu aj mimo hry?',options:[
+ act('Vypočuť ma a pomôcť mi dohodnúť ďalší krok.',{friend:'Mia ťa môže vypočuť a ponúknuť, že pôjde s tebou po pomoc.',home:'Dôveryhodný dospelý mimo školy ťa môže vypočuť a pomôcť ti premyslieť ďalší krok.',school:'Dôveryhodný dospelý v škole ťa môže vypočuť aj vtedy, keď sa to začalo mimo školy.'},'Správca rieši pravidlá hry. Osobnú oporu ti skôr dá kamarát alebo dôveryhodný dospelý.'),
+ bad('Požiadať ostatných, aby hráčovi vypisovali, kým neprestane.','Hromadné vypisovanie môže ublížiť ďalším ľuďom a problém zhoršiť.'),
+ act('Ukázať alebo opísať správy dôveryhodnému dospelému bez ich ďalšieho šírenia.',{me:'Môžeš ukázať pôvodné správy na svojom zariadení. Tak dospelý uvidí, čo sa opakuje.',friend:'Mia ti môže pomôcť vysvetliť, čo videla, bez toho, aby obsah ďalej rozosielala.'},'Dospelý môže správy vidieť a pomôcť. Pôvodnú situáciu mu môžeš ukázať ty alebo ju môže opísať svedok.')]}]},
+ {short:'Prosba',icon:'alarm',title:'„Nechcem, aby to všetci vedeli.“',story:'Sofia ti ukáže opakované ponižujúce správy. Bojí sa, že sa to zhorší, ak sa o nich dozvie celá trieda.',tasks:[
+ {title:'Ako zareaguješ na Sofiinu prosbu?',options:[
+ act('Vypočuť ju v súkromí a spýtať sa, čo by jej pomohlo.',{me:'Môžeš ju vypočuť bez toho, aby si správy ukazoval celej triede.',friend:'Dobrý kamarát môže byť pri nej a pomôcť jej premyslieť ďalší krok.'},'Toto je priama podpora: vieš ju ponúknuť ty alebo niekto, komu Sofia dôveruje.'),
+ bad('Sľúbiť, že to za žiadnych okolností nikomu nepoviem.','Sofiino súkromie môžeš chrániť, no nesľubuj, že zostanete bez pomoci, ak sa bude ubližovanie opakovať alebo sa necíti bezpečne.'),
+ bad('Zverejniť správy v triednej skupine, aby sa ostatní postavili na jej stranu.','Zverejnenie môže Sofii ublížiť znova. Citlivé detaily radšej riešte v súkromí.')]},
+ {title:'Sofia už nechce byť na riešenie sama. Kto môže pomôcť?',options:[
+ act('Ponúknuť, že pôjdem so Sofiou za dospelým, ktorému verí.',{me:'Môžeš ísť so Sofiou. Nemusí celý príbeh rozprávať sama.',friend:'Aj iný kamarát, ktorému Sofia dôveruje, ju môže sprevádzať.'},'Sprevádzať ju môžeš ty alebo kamarát, ktorému verí.'),
+ act('Vypočuť Sofiu a dohodnúť, ako bezpečne pokračovať.',{school:'Dospelý v škole môže so Sofiou dohodnúť ďalšie kroky a podľa situácie zapojiť školský tím.',home:'Dospelý mimo školy, ktorému verí, môže pomôcť zvoliť postup a podľa potreby osloviť školu.'},'Pri opakovanom ubližovaní je na tento krok vhodný dôveryhodný dospelý.'),
+ bad('Čakať, kým sama nazbiera dosť dôkazov, a dovtedy nič nepovedať.','O pomoc sa dá požiadať aj bez hotových dôkazov. Stačí začať tým, čo vie opísať.')]}]},
+ {short:'Pokračuje',icon:'repeat',title:'Jeden príspevok zmizol, ďalší pribudol',story:'Správca zmazal posmešný príspevok o tebe, no na druhý deň ho niekto vložil do inej skupiny. Prvý dospelý to považoval za ojedinelý vtip.',tasks:[
+ {title:'Ako ukážeš, že problém pokračuje?',options:[
+ act('Povedať ďalšiemu dôveryhodnému dospelému, kde a kedy sa to zopakovalo.',{me:'Pomenuj dve konkrétne veci: kde sa to deje a že to pokračovalo aj po zmazaní.',friend:'Kamarát, ktorý to videl, môže s tebou dospelému opísať, čo sa zopakovalo.'},'Nové informácie môže priniesť ten, koho sa to týka, alebo svedok.'),
+ bad('Dať kópiu na svoj profil ako dôkaz.','Na vysvetlenie stačí opis alebo ukážka pôvodného chatu dôveryhodnému dospelému. Verejné zdieľanie môže šírenie rozšíriť.'),
+ act('Posúdiť príspevok v druhej skupine, ak tam má oprávnenie zasiahnuť.',{admin:'Druhá skupina môže mať iného správcu. Nahlásenie patrí tam, kde sa obsah práve objavuje.'},'V cudzej skupine môže obsah riešiť správca s oprávnením alebo platforma.')]},
+ {title:'Koho môžeš osloviť, ak prvá pomoc nestačila?',options:[
+ act('Vypočuť nové informácie a pomôcť dohodnúť ďalší krok.',{school:'Môžeš osloviť inú učiteľku, školského psychológa alebo iného dospelého v škole, ktorému dôveruješ.',home:'Môžeš osloviť rodiča alebo iného blízkeho dospelého, ktorému dôveruješ. Spolu môžete kontaktovať školu.'},'Ak prvá reakcia nepomohla, môžeš skúsiť ďalšieho dôveryhodného dospelého.'),
+ bad('Nechať to tak, lebo jeden dospelý to už označil za vtip.','To, že prvý dospelý situáciu nepochopil, neznamená, že nemáš právo obrátiť sa na niekoho iného.'),
+ act('Byť pri mne, kým znovu požiadam o pomoc.',{friend:'Kamarát ťa môže sprevádzať. Opakované ubližovanie však nemusíte vyriešiť sami.',school:'Dôveryhodný dospelý v škole ťa môže podporiť pri ďalšom rozhovore.',home:'Dôveryhodný dospelý mimo školy môže ísť s tebou napríklad na rozhovor do školy.'},'Pri ďalšom rozhovore ti môže byť oporou kamarát alebo dôveryhodný dospelý.')]}]}
+];
+const quiz=[
+ {q:'Niekto sa v skupine opakovane vysmieva spolužiačke. Ako jej môžeš pomôcť ako svedok?',o:['Pošlem ukážku spolužiakom, aby sa jej zastali.','Ozvem sa jej súkromne a ponúknem pomoc bez preposielania obsahu.','Počkám, kým sa najprv ozve verejne.'],ok:1,why:'Súkromná podpora jej necháva priestor rozhodnúť sa, čo chce povedať. Preposlanie môže šíriť ubližujúci obsah ďalej.'},
+ {q:'Správca zmazal posmešný príspevok. Čo z toho vieš?',o:['Všetky kópie sa tým vymazali.','Už nemá zmysel povedať to niekomu dospelému.','Príspevok zmizol z miesta, kde správca zasiahol. Kópie inde môžu zostať.'],ok:2,why:'Zásah správcu pomáha zastaviť šírenie na konkrétnom mieste. O ďalších skupinách alebo uložených kópiách ešte nič nevieš.'},
+ {q:'Prvý dospelý situáciu podcenil a ubližovanie pokračuje. Čo má zmysel skúsiť?',o:['Oslovím iného dospelého, ktorému dôverujem, a poviem, čo sa zopakovalo.','Najprv musím dokázať, že ide o kyberšikanu.','Budem reagovať rovnakým spôsobom, nech to ten človek zažije.'],ok:0,why:'Môžeš požiadať o pomoc znova. Popíš, čo sa deje, kde a kedy; nemusíš sám rozhodnúť, ako sa to má nazvať.'}
+];
+const own=(obj,key)=>Object.prototype.hasOwnProperty.call(obj,key);
+let s;
+function reset(){s={i:0,t:0,a:null,who:null,passed:false,phase:'map',q:0,picks:[]};}
+const current=()=>cases[s.i];
+const task=()=>current().tasks[s.t];
+function clearStep(){s.a=null;s.who=null;s.passed=false;}
+function progress(){
+ return '<ol class="progress" aria-label="Postup hry">'+[...cases.map(c=>c.short),'Kvíz'].map((n,i)=>{
+  const active=s.phase==='map'?s.i:cases.length;
+  return '<li '+(i===active&&s.phase!=='end'?'aria-current="step"':i<active||s.phase==='end'?'class="done"':'')+'>'+(i+1)+' <span class="long">'+n+'</span></li>';
+ }).join('')+'</ol>';
+}
+function banner(c){
+ return '<header class="case"><div class="case-icon">'+svg(c.icon)+'</div><div><p class="eyebrow">Príbeh '+(s.i+1)+' / '+cases.length+'</p><h2 id="title" tabindex="-1">'+c.title+'</h2><p>'+c.story+'</p></div></header>';
+}
+function track(){
+ const destination={friend:'300 50',school:'100 150',home:'500 150',admin:'300 250'}[s.who];
+ const color=s.who&&own(task().options[s.a].ok,s.who)?'#d6fc95':'#ffc7bb';
+ const active=destination?'<path d="M300 150L'+destination+'" stroke="'+color+'" stroke-width="5" fill="none" stroke-linecap="round"/>':'';
+ return '<svg class="tracks" aria-hidden="true" viewBox="0 0 600 300" preserveAspectRatio="none"><path d="M100 150H500M300 50v200" fill="none" stroke="#526e8e" stroke-width="20"/><path d="M100 150H500M300 50v200" fill="none" stroke="#132335" stroke-width="14"/><path d="M100 150H500M300 50v200" fill="none" stroke="#9cb2cd" stroke-width="2" stroke-dasharray="8 10"/>'+active+'<g fill="#b3c7e5" opacity=".4"><circle cx="170" cy="56" r="5"/><circle cx="427" cy="236" r="5"/><circle cx="473" cy="70" r="3"/><circle cx="129" cy="241" r="3"/></g></svg>';
+}
+function map(){
+ const selected=s.a===null?null:task().options[s.a], label=selected?'Klikni na osobu na mape':'Najprv vyber krok';
+ return '<section class="map" id="map" aria-labelledby="map-title"><div class="map-top"><h3 id="map-title" tabindex="-1">2. Kto to môže urobiť?</h3><span>'+label+'</span></div><div class="stations">'+track()+Object.entries(people).map(([k,[name,description]])=>{
+  const verdict=s.who===k?(own(selected.ok,k)?'right':'wrong'):'';
+  return '<button type="button" aria-pressed="'+(s.who===k)+'" class="place '+(selected?'is-ready ':'')+verdict+'" data-person="'+k+'" '+(selected?'':'disabled')+'>'+svg(k)+'<b>'+name+'</b><small>'+description+'</small></button>';
+ }).join('')+'</div><p class="map-note">Niektoré kroky môže urobiť viac ľudí. Skús ich porovnať.</p></section>';
+}
+function outcome(){
+ if(!s.who)return '';
+ const a=task().options[s.a], ok=own(a.ok,s.who), any=Object.keys(a.ok).length>0, multiple=Object.keys(a.ok).length>1;
+ return '<p id="out" tabindex="-1" class="out '+(ok?'yes':'no')+'"><strong>'+(ok?'Toto je vhodná cesta.':any?'Tento krok priraď inam.':'Tento krok by nepomohol.')+'</strong>'+(ok?a.ok[s.who]:a.reason)+(ok&&multiple?' Môžeš na mape skúsiť aj inú osobu.':!ok&&!any?' Vyber iný krok.':'')+'</p>';
+}
+function board(){
+ const t=task();
+ return banner(current())+'<div class="layout"><section class="work" aria-labelledby="prompt"><p class="eyebrow">Úloha '+(s.t+1)+' / '+current().tasks.length+'</p><h3 id="prompt" tabindex="-1">'+t.title+'</h3><p class="help">1. Klikni na jeden krok. Potom vyber osobu na mape.</p><div class="opts">'+t.options.map((a,i)=>'<button type="button" class="option" data-action="'+i+'" aria-pressed="'+(i===s.a)+'"><span class="opt-num" aria-hidden="true">'+(i+1)+'</span>'+a.label+'</button>').join('')+'</div>'+(s.a!==null?'<p class="help"><strong>Krok '+(s.a+1)+' je vybraný.</strong> <button class="btn" type="button" data-jump>Prejsť na mapu →</button></p>':'')+outcome()+(s.passed?'<div class="buttons"><button type="button" class="btn primary" data-next>'+(s.t+1<current().tasks.length?'Ďalšia úloha':s.i+1<cases.length?'Ďalší príbeh':'Spustiť záverečný kvíz')+' →</button></div>':'')+'</section>'+map()+'</div>';
+}
+function question(){
+ const q=quiz[s.q], n=s.picks[s.q], answered=n!==undefined;
+ return '<section class="summary" aria-labelledby="title"><p class="eyebrow">Záverečný kvíz · '+(s.q+1)+' / '+quiz.length+'</p><h2 id="title" tabindex="-1">'+q.q+'</h2><div class="opts">'+q.o.map((o,i)=>'<button type="button" class="option '+(answered&&i===q.ok?'quiz-right':answered&&i===n?'quiz-wrong':'')+'" data-answer="'+i+'" '+(answered?'disabled':'')+'><span class="opt-num" aria-hidden="true">'+(i+1)+'</span>'+o+(answered?(i===q.ok?' ✓':i===n?' ×':''):'')+'</button>').join('')+'</div>'+(answered?'<p id="out" tabindex="-1" class="out '+(n===q.ok?'yes':'no')+'"><strong>'+(n===q.ok?'Správne.':'Pozri označenú odpoveď.')+'</strong>'+q.why+'</p><div class="buttons"><button type="button" class="btn primary" data-qnext>'+(s.q+1===quiz.length?'Zobraziť výsledok':'Ďalšia otázka')+' →</button></div>':'')+'</section>';
+}
+function finish(){
+ const score=quiz.reduce((n,q,i)=>n+(s.picks[i]===q.ok?1:0),0);
+ return '<section class="summary"><p class="eyebrow">Mapa prejdená</p><h2 id="title" tabindex="-1">Výsledok kvízu: '+score+' / '+quiz.length+'</h2><ul><li><strong>Ako svedok:</strong> nepridávam sa k šíreniu a môžem ponúknuť podporu.</li><li><strong>Keď sa to opakuje:</strong> požiadam dôveryhodného dospelého o pomoc. Ak prvá pomoc nestačí, môžem sa obrátiť na niekoho iného.</li><li><strong>V aplikácii:</strong> môžem využiť blokovanie alebo nahlásenie, ak sú dostupné. O odstránení cudzieho obsahu rozhoduje správca alebo platforma.</li></ul><p><strong>Na zamyslenie:</strong> Ktoré dve miesta na mape by si vedel využiť aj mimo tejto hry?</p><div class="buttons"><button type="button" class="btn primary" data-reset>Skúsiť inú cestu od začiatku ↻</button></div></section>';
+}
+function render(focus){
+ app.innerHTML=progress()+(s.phase==='map'?board():s.phase==='quiz'?question():finish());
+ if(focus)app.querySelector(focus)?.focus();
+}
+app.addEventListener('click',e=>{
+ const b=e.target.closest('button');if(!b||b.disabled)return;
+ const d=b.dataset;
+ if('reset' in d){reset();render('#title');return}
+ if(s.phase==='map'){
+  if('action' in d){s.a=+d.action;s.who=null;live.textContent='Krok vybraný. Teraz vyber osobu na mape.';render('[data-action="'+s.a+'"]');return}
+  if('jump' in d){app.querySelector('#map-title')?.focus();return}
+  if('person' in d&&s.a!==null&&own(people,d.person)){
+   s.who=d.person;
+   s.passed=s.passed||own(task().options[s.a].ok,s.who);
+   render('#out');return;
+  }
+  if('next' in d&&s.passed){
+   clearStep();s.t++;
+   if(s.t>=current().tasks.length){s.i++;s.t=0;if(s.i>=cases.length)s.phase='quiz';render('#title');}
+   else render('#prompt');
+   return;
+  }
+ }
+ if(s.phase==='quiz'){
+  if('answer' in d&&s.picks[s.q]===undefined){s.picks[s.q]=+d.answer;render('#out');return}
+  if('qnext' in d&&s.picks[s.q]!==undefined){s.q++;if(s.q===quiz.length)s.phase='end';render('#title')}
+ }
+});
+reset();render();
+})();
+</script></body></html>
