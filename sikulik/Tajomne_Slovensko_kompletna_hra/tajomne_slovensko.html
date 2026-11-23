@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tajomné Slovensko – realistická verzia</title>
+<style>
+  :root{
+    --bg:#eaf4f7; --text:#17334a; --accent:#176c95; --accent2:#1b9bb3;
+    --panel:#ffffff; --muted:#526777; --soft:#dcebf0;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,Arial,sans-serif}
+  main{max-width:1120px;margin:auto;padding:22px}
+  h1{margin:0 0 8px;font-size:clamp(28px,4vw,46px)}
+  h2{margin-top:0}
+  .panel{background:var(--panel);border-radius:20px;padding:20px;box-shadow:0 8px 25px rgba(17,50,82,.14)}
+  .layout{display:grid;grid-template-columns:minmax(300px,680px) 1fr;gap:20px}
+  .stage{position:relative;aspect-ratio:5/4;border-radius:16px;overflow:hidden;background:#dce8f2;border:1px solid #c8d9e5}
+  .stage img{width:100%;height:100%;object-fit:cover;background:#fff;display:block}
+  .tiles{position:absolute;inset:0;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(5,1fr)}
+  .tile{
+    background:
+      linear-gradient(140deg,rgba(23,108,149,.97),rgba(27,155,179,.97)),
+      repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 8px,rgba(255,255,255,.02) 8px 16px);
+    border:1px solid rgba(180,228,237,.9);
+    display:grid;place-items:center;color:white;font-size:24px;font-weight:800;
+    transition:opacity .25s, transform .15s, filter .15s;
+    user-select:none;
+  }
+  .tile.off{opacity:0;pointer-events:none}
+  .tile:hover{filter:brightness(1.12);cursor:pointer;transform:scale(.98)}
+  button,select{border:0;border-radius:12px;padding:12px 15px;font-size:16px;font-weight:700;cursor:pointer}
+  button{background:var(--accent);color:white}
+  button:disabled{opacity:.45;cursor:default}
+  .secondary{background:var(--soft);color:#17415c}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+  .stat{font-size:22px;font-weight:800}
+  .fact{background:#eef8e7;border-left:5px solid #6ca744;padding:12px;border-radius:9px;margin-top:12px}
+  .small{color:var(--muted);font-size:14px;line-height:1.45}
+  .answer{font-size:24px;font-weight:800;margin:10px 0}
+  select{background:#eef3f7;max-width:100%}
+  .pill{display:inline-block;background:#edf6fb;color:#22516a;border-radius:999px;padding:7px 12px;font-weight:700;font-size:14px;margin:3px 6px 0 0}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .help{background:#f6fbff;border:1px solid #dcebf4;border-radius:12px;padding:12px;margin-top:12px}
+  @media(max-width:760px){.layout{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+  <h1>🇸🇰 Tajomné Slovensko</h1>
+  <p>Odhaľuj kartičky a uhádni, čo sa skrýva na obrázku. Obrázky sú teraz realistickejšie a majú aj pozadie, takže hra je náročnejšia.</p>
+
+  <div class="layout">
+    <section class="panel">
+      <div class="stage">
+        <img id="picture" alt="Skrytý obrázok zo Slovenska">
+        <div class="tiles" id="tiles"></div>
+      </div>
+
+      <div class="controls">
+        <button id="reveal">🎲 Odkry náhodné políčko</button>
+        <button class="secondary" id="solve">👀 Ukáž riešenie</button>
+        <button id="next">➡️ Ďalší obrázok</button>
+      </div>
+
+      <div class="stat" id="count">Odkryté: 0 / 25</div>
+      <div id="solution" aria-live="polite"></div>
+    </section>
+
+    <aside class="panel">
+      <h2>🕵️ Pátrači</h2>
+      <p>Najskôr si tipnite odpoveď nahlas. Až potom odkryte ďalšie políčko.</p>
+
+      <label for="choice"><b>Výber témy:</b></label>
+      <p>
+        <select id="choice">
+          <option value="all">Všetky obrázky (náhodne)</option>
+          <option value="symbols">Štátne symboly</option>
+          <option value="coins">Euromince</option>
+          <option value="places">Miesta a mapa</option>
+        </select>
+      </p>
+
+      <p id="round" class="stat">Obrázok 1</p>
+      <div class="meta">
+        <span class="pill" id="themePill">Téma: všetko</span>
+        <span class="pill">Mriežka: 5 × 5</span>
+        <span class="pill">Náhodné odkrývanie</span>
+      </div>
+
+      <div class="help small">
+        <b>Tip pre učiteľa:</b><br>
+        Za uhádnutie pri 1–5 odkrytých políčkach dajte 5 bodov, pri 6–10 štyri, pri 11–15 tri, pri 16–20 dva a pri 21–25 jeden bod.
+      </div>
+
+      <p style="margin-top:14px"><button class="secondary" id="restart">🔄 Nová hra</button></p>
+    </aside>
+  </div>
+
+  <p class="small">Použité sú realisticky pôsobiace autorské obrázky vytvorené pre túto hru. Sú vhodné na hádanie a vyučovanie vlastivedy.</p>
+</main>
+
+<script>
+const data = [
+  {
+    n:'Mapa Slovenska',
+    cat:'places',
+    f:'Slovensko má päť susedných štátov: Česko, Rakúsko, Maďarsko, Poľsko a Ukrajinu.',
+    img:'plánovanie_cesty_po_slovensku.png'
+  },
+  {
+    n:'Slovenské euromince',
+    cat:'coins',
+    f:'Na slovenských eurominciach nájdeš napríklad dvojkríž na trojvrší, Bratislavský hrad a Kriváň.',
+    img:'slovenské_euromince_pod_lupou.png'
+  },
+  {
+    n:'Bratislavský hrad',
+    cat:'places',
+    f:'Bratislavský hrad stojí nad Dunajom v hlavnom meste Slovenska – v Bratislave.',
+    img:'bratislavský_hrad_nad_mestom_a_dunajom.png'
+  },
+  {
+    n:'Kriváň',
+    cat:'places',
+    f:'Kriváň je známy vrch vo Vysokých Tatrách a patrí medzi symboly Slovenska.',
+    img:'alpský_chodník_pod_skalnatými_štítmi.png'
+  },
+  {
+    n:'Vlajka Slovenskej republiky',
+    cat:'symbols',
+    f:'Vlajka Slovenskej republiky má tri vodorovné pruhy – biely, modrý a červený – a štátny znak pri žrdi.',
+    img:'slovenská_vlajka_nad_bratislavským_hradom.png'
+  },
+  {
+    n:'Štátny znak Slovenskej republiky',
+    cat:'symbols',
+    f:'Na červenom štíte je strieborný dvojkríž na modrom trojvrší.',
+    img:'slovenský_školský_kútik_s_erbom.png'
+  },
+  {
+    n:'Čičmany',
+    cat:'places',
+    f:'Čičmany sú známe maľovanými drevenicami s bielymi ornamentmi.',
+    img:'tradičná_maľovaná_chalupa_v_dedine.png'
+  },
+  {
+    n:'Devínsky hrad',
+    cat:'places',
+    f:'Devínsky hrad je známa zrúcanina nad sútokom Dunaja a Moravy.',
+    img:'ruiny_hradu_nad_strieborným_meandrom_váhu.png'
+  },
+  {
+    n:'Štátne symboly Slovenskej republiky',
+    cat:'symbols',
+    f:'Medzi štátne symboly patria vlajka, znak, štátna pečať a hymna.',
+    img:'slovenské_symboly_na_stole.png'
+  },
+  {
+    n:'Bratislava pri Dunaji',
+    cat:'places',
+    f:'Bratislava leží na rieke Dunaj. Spoznáš ju aj podľa hradu a mosta SNP s UFO reštauráciou.',
+    img:'bratislavská_promenáda_pri_dunaji.png'
+  }
+];
+
+let deck = [];
+let current = null;
+let shown = 0;
+let round = 0;
+
+const tiles = document.getElementById('tiles');
+const pic = document.getElementById('picture');
+const solution = document.getElementById('solution');
+const themePill = document.getElementById('themePill');
+const themeNames = {
+  all:'všetko',
+  symbols:'štátne symboly',
+  coins:'euromince',
+  places:'miesta a mapa'
+};
+
+function shuffle(arr){
+  const a = [...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function getFilteredData(){
+  const choice = document.getElementById('choice').value;
+  themePill.textContent = 'Téma: ' + themeNames[choice];
+  return data.filter(x => choice === 'all' || x.cat === choice);
+}
+
+function makeDeck(){
+  deck = shuffle(getFilteredData());
+}
+
+function updateCounter(){
+  document.getElementById('count').textContent = `Odkryté: ${shown} / 25`;
+  document.getElementById('reveal').disabled = shown >= 25;
+}
+
+function openTile(tile){
+  if(tile.classList.contains('off')) return;
+  tile.classList.add('off');
+  shown++;
+  updateCounter();
+}
+
+function revealRandomTile(){
+  const closed = [...tiles.children].filter(x => !x.classList.contains('off'));
+  if(!closed.length) return;
+  const picked = closed[Math.floor(Math.random() * closed.length)];
+  openTile(picked);
+}
+
+function showSolution(){
+  [...tiles.children].forEach(x => x.classList.add('off'));
+  shown = 25;
+  updateCounter();
+  solution.innerHTML = `<div class="answer">✅ ${current.n}</div><div class="fact">💡 ${current.f}</div>`;
+}
+
+function next(){
+  if(!deck.length) makeDeck();
+  current = deck.pop();
+  round++;
+  shown = 0;
+  solution.innerHTML = '';
+  pic.src = encodeURI(current.img);
+  pic.alt = current.n;
+  tiles.innerHTML = '';
+
+  for(let i=0;i<25;i++){
+    const t = document.createElement('div');
+    t.className = 'tile';
+    t.textContent = '?';
+    t.addEventListener('click', ()=> openTile(t));
+    tiles.appendChild(t);
+  }
+
+  document.getElementById('round').textContent = 'Obrázok ' + round;
+  updateCounter();
+}
+
+document.getElementById('reveal').onclick = revealRandomTile;
+document.getElementById('solve').onclick = showSolution;
+document.getElementById('next').onclick = next;
+document.getElementById('restart').onclick = () => {
+  round = 0;
+  makeDeck();
+  next();
+};
+document.getElementById('choice').onchange = () => {
+  round = 0;
+  makeDeck();
+  next();
+};
+
+makeDeck();
+next();
+</script>
+</body>
+</html>
