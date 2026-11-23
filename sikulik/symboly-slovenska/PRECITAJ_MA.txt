@@ -1,0 +1,8 @@
+TAJOMNÉ SLOVENSKO – návod
+
+1. Rozbaľte celý ZIP do jedného priečinka.
+2. Otvorte súbor tajomne_slovensko.html v Chrome, Edge alebo Firefox.
+3. Súbory PNG nechajte v rovnakom priečinku ako HTML.
+4. Hra funguje aj bez internetového pripojenia.
+
+Poznámka: Obrázky sú realisticky vyzerajúce ilustrácie vytvorené AI, nie dokumentárne fotografie ani presné reprodukcie mincí.
